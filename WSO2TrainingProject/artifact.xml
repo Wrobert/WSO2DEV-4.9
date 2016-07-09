@@ -11,4 +11,19 @@
     <artifact name="TranslatorProxy" groupId="com.wso2.training.HiRollerBankProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/proxy-services/TranslatorProxy.xml</file>
     </artifact>
+    <artifact name="EchoMessageStore" groupId="com.wso2.training.HiRollerBankProject.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/EchoMessageStore.xml</file>
+    </artifact>
+    <artifact name="EchoEndpoint" groupId="com.wso2.training.HiRollerBankProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/EchoEndpoint.xml</file>
+    </artifact>
+    <artifact name="MessageStoreProxy" groupId="com.wso2.training.HiRollerBankProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/MessageStoreProxy.xml</file>
+    </artifact>
+    <artifact name="MessageProcessorLogSequence" groupId="com.wso2.training.HiRollerBankProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/MessageProcessorLogSequence.xml</file>
+    </artifact>
+    <artifact name="EchoMessageProcessor" groupId="com.wso2.training.HiRollerBankProject.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/EchoMessageProcessor.xml</file>
+    </artifact>
 </artifacts>
