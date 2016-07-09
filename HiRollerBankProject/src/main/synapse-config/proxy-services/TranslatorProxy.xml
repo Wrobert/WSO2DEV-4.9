@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="TranslatorProxy" startOnLoad="true" trace="disable"
+  transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <log level="custom" separator=",">
+        <property name="STATUS" value="Account Balance Request"/>
+      </log>
+      <switch source="//hir:type" xmlns:hir="http://hirollerbankws.training.wso2.com/">
+        <case regex="CHK">
+          <log level="custom" separator=",">
+            <property name="STATUS" value="CHK Balance Request"/>
+          </log>
+          <payloadFactory media-type="xml">
+            <format>
+              <hir:checkBalance>
+                <accountNo xmlns="">$1</accountNo>
+              </hir:checkBalance>
+            </format>
+            <args>
+              <arg evaluator="xml" expression="//hir:accountNo"/>
+            </args>
+          </payloadFactory>
+        </case>
+        <default>
+          <log level="custom" separator=",">
+            <property name="STATUS" value="SAV/OTHER Balance Request"/>
+          </log>
+          <payloadFactory media-type="xml">
+            <format>
+              <hir:saveBalance>
+                <accountNo xmlns="">$1</accountNo>
+              </hir:saveBalance>
+            </format>
+            <args>
+              <arg evaluator="xml" expression="//hir:accountNo"/>
+            </args>
+          </payloadFactory>
+        </default>
+      </switch>
+    </inSequence>
+    <outSequence>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </target>
+</proxy>

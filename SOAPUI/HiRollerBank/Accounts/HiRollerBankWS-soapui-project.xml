@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="95bfe5c6-9c7f-409c-89f2-1fb63743e3e3" activeEnvironment="Default" name="HiRollerBankWS" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ba4c1137-dad0-46ca-956d-624f847783c8" wsaVersion="NONE" name="AccountsSoapBinding" type="wsdl" bindingName="{http://hirollerbankws.training.wso2.com/}AccountsSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9764/HiRollerBankWS/services/accounts?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9764/HiRollerBankWS/services/accounts?wsdl"><con:part><con:url>http://localhost:9764/HiRollerBankWS/services/accounts?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="Accounts" targetNamespace="http://hirollerbankws.training.wso2.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://hirollerbankws.training.wso2.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://hirollerbankws.training.wso2.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="checkBalance" type="tns:checkBalance"/>
+      <xs:element name="checkBalanceResponse" type="tns:checkBalanceResponse"/>
+      <xs:element name="saveBalance" type="tns:saveBalance"/>
+      <xs:element name="saveBalanceResponse" type="tns:saveBalanceResponse"/>
+      <xs:complexType name="checkBalance">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountNo" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkBalanceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveBalance">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="accountNo" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="saveBalanceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="checkBalanceResponse">
+    <wsdl:part element="tns:checkBalanceResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveBalanceResponse">
+    <wsdl:part element="tns:saveBalanceResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkBalance">
+    <wsdl:part element="tns:checkBalance" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveBalance">
+    <wsdl:part element="tns:saveBalance" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Accounts">
+    <wsdl:operation name="checkBalance">
+      <wsdl:input message="tns:checkBalance" name="checkBalance"></wsdl:input>
+      <wsdl:output message="tns:checkBalanceResponse" name="checkBalanceResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveBalance">
+      <wsdl:input message="tns:saveBalance" name="saveBalance"></wsdl:input>
+      <wsdl:output message="tns:saveBalanceResponse" name="saveBalanceResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountsSoapBinding" type="tns:Accounts">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkBalance">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="checkBalance">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkBalanceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveBalance">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="saveBalance">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveBalanceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Accounts">
+    <wsdl:port binding="tns:AccountsSoapBinding" name="AccountsPort">
+      <soap:address location="http://localhost:9764/HiRollerBankWS/services/accounts"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8280/services/AccountProxy</con:endpoint><con:endpoint>http://localhost:8280/services/ContentBasedRouterProxy</con:endpoint><con:endpoint>http://localhost:8280/services/TranslatorProxy</con:endpoint><con:endpoint>http://localhost:9764/HiRollerBankWS/services/accounts</con:endpoint></con:endpoints><con:operation id="8549ba6b-7d84-4ebd-8281-33b063dbced1" isOneWay="false" action="" name="checkBalance" bindingOperationName="checkBalance" type="Request-Response" outputName="checkBalanceResponse" inputName="checkBalance" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dbd3757b-3e77-4262-b9b4-2b0756b19dc7" name="CHK-Request" outgoingWss="" incomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/TranslatorProxy</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hir="http://hirollerbankws.training.wso2.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hir:checkBalance>\r
+         <!--Optional:-->\r
+         <accountNo>1111</accountNo>\r
+      </hir:checkBalance>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://hirollerbankws.training.wso2.com/Accounts/checkBalance"/><con:wsrmConfig version="1.2"/></con:call><con:call id="c455ea61-65e6-4d90-aaf5-397c2f1a8e6f" name="SAV-Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/ContentBasedRouterProxy</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hir="http://hirollerbankws.training.wso2.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hir:saveBalance>\r
+         <!--Optional:-->\r
+         <accountNo>2222</accountNo>\r
+      </hir:saveBalance>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://hirollerbankws.training.wso2.com/Accounts/checkBalance"/><con:wsrmConfig version="1.2"/></con:call><con:call id="33092204-56db-4fcd-a6b7-517367feef0b" name="SAV-Translate-Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/TranslatorProxy</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hir="http://hirollerbankws.training.wso2.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hir:balance>\r
+      <hir:type>SAV</hir:type>
+         <!--Optional:-->\r
+         <hir:accountNo>2222</hir:accountNo>\r
+      </hir:balance>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://hirollerbankws.training.wso2.com/Accounts/checkBalance"/><con:wsrmConfig version="1.2"/></con:call><con:call id="675ea7b7-490b-4f47-8aad-65d4337fb854" name="CHK-Translate-Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/TranslatorProxy</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hir="http://hirollerbankws.training.wso2.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hir:balance>\r
+      <hir:type>CHK</hir:type>
+         <!--Optional:-->\r
+         <hir:accountNo>1111</hir:accountNo>\r
+      </hir:balance>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://hirollerbankws.training.wso2.com/Accounts/checkBalance"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="47bbc37e-908e-475d-b014-1ff40cea87df" isOneWay="false" action="" name="saveBalance" bindingOperationName="saveBalance" type="Request-Response" outputName="saveBalanceResponse" inputName="saveBalance" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="10d74069-a328-47e8-bb76-61d768f22f79" name="Request 1" outgoingWss="" incomingWss=""><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8280/services/AccountProxy</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:hir="http://hirollerbankws.training.wso2.com/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <hir:saveBalance>\r
+         <!--Optional:-->\r
+         <accountNo>?</accountNo>\r
+      </hir:saveBalance>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/></con:credentials><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://hirollerbankws.training.wso2.com/Accounts/saveBalance"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

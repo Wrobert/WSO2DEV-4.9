@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://hirollerbankws.training.wso2.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="Accounts" targetNamespace="http://hirollerbankws.training.wso2.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://hirollerbankws.training.wso2.com/" elementFormDefault="unqualified" targetNamespace="http://hirollerbankws.training.wso2.com/" version="1.0">
+
+  <xs:element name="checkBalance" type="tns:checkBalance"/>
+
+  <xs:element name="checkBalanceResponse" type="tns:checkBalanceResponse"/>
+
+  <xs:element name="saveBalance" type="tns:saveBalance"/>
+
+  <xs:element name="saveBalanceResponse" type="tns:saveBalanceResponse"/>
+
+  <xs:complexType name="checkBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountNo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="checkBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saveBalance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountNo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="saveBalanceResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="checkBalanceResponse">
+    <wsdl:part element="tns:checkBalanceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveBalanceResponse">
+    <wsdl:part element="tns:saveBalanceResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkBalance">
+    <wsdl:part element="tns:checkBalance" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveBalance">
+    <wsdl:part element="tns:saveBalance" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Accounts">
+    <wsdl:operation name="checkBalance">
+      <wsdl:input message="tns:checkBalance" name="checkBalance">
+    </wsdl:input>
+      <wsdl:output message="tns:checkBalanceResponse" name="checkBalanceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveBalance">
+      <wsdl:input message="tns:saveBalance" name="saveBalance">
+    </wsdl:input>
+      <wsdl:output message="tns:saveBalanceResponse" name="saveBalanceResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccountsSoapBinding" type="tns:Accounts">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkBalance">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="checkBalance">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkBalanceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveBalance">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="saveBalance">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="saveBalanceResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Accounts">
+    <wsdl:port binding="tns:AccountsSoapBinding" name="AccountsPort">
+      <soap:address location="http://localhost:9764/HiRollerBankWS/services/accounts"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

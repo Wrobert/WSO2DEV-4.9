@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="ContentBasedRouterProxy" startOnLoad="true" trace="disable"
+  transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <endpoint key="HiRollerBankAccountWS"/>
+    <inSequence>
+      <log level="custom" separator=",">
+        <property name="STATUS" value="Account Balance Request"/>
+      </log>
+      <switch source="fn:count(//*[local-name()='checkBalance'])">
+        <case regex="1.0">
+          <log level="custom" separator=",">
+            <property name="STATUS" value="CHK Balance Request"/>
+          </log>
+        </case>
+        <default>
+          <log level="custom" separator=",">
+            <property name="STATUS" value="SAV/OTHER Balance Request"/>
+          </log>
+        </default>
+      </switch>
+    </inSequence>
+    <outSequence>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </target>
+</proxy>

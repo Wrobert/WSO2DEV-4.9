@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="HiRollerBankAccountWS" groupId="com.wso2.training.HiRollerBankProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/HiRollerBankAccountWS.xml</file>
+    </artifact>
+    <artifact name="AccountProxy" groupId="com.wso2.training.HiRollerBankProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/AccountProxy.xml</file>
+    </artifact>
+    <artifact name="ContentBasedRouterProxy" groupId="com.wso2.training.HiRollerBankProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/ContentBasedRouterProxy.xml</file>
+    </artifact>
+    <artifact name="TranslatorProxy" groupId="com.wso2.training.HiRollerBankProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/TranslatorProxy.xml</file>
+    </artifact>
+</artifacts>

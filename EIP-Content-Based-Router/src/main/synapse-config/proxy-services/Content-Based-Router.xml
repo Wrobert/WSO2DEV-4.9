@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://ws.apache.org/ns/synapse">
+  <proxy name="CreditCardPaymentService" startOnLoad="true"
+    trace="disable" transports="https http">
+    <target>
+      <inSequence>
+        <property
+          expression="//m0:doPayment/m0:paymentInfo/xsd:cardType"
+          name="symbol" scope="default" type="STRING"
+          xmlns:m0="http://ccps.services.esb.wso2.packt.com" xmlns:xsd="http://ccps.services.esb.wso2.packt.com/xsd"/>
+        <switch source="//m0:doPayment/m0:paymentInfo/xsd:cardType"
+          xmlns:m0="http://ccps.services.esb.wso2.packt.com" xmlns:xsd="http://ccps.services.esb.wso2.packt.com/xsd">
+          <case regex="AMEX">
+            <payloadFactory media-type="xml">
+              <format>
+                <aps:doPayment
+                  xmlns:aps="http://aps.services.esb.wso2.packt.com" xmlns:xsd="http://aps.services.esb.wso2.packt.com/xsd">
+                  <aps:paymentInfo>
+                    <xsd:billingAddress>$1</xsd:billingAddress>
+                    <xsd:cardHolderName>$2</xsd:cardHolderName>
+                    <xsd:creditCardNumber>$3</xsd:creditCardNumber>
+                    <xsd:expiryDate>$4</xsd:expiryDate>
+                    <xsd:paymentAmount>$5</xsd:paymentAmount>
+                  </aps:paymentInfo>
+                </aps:doPayment>
+              </format>
+              <args>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:billingAddress"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:cardHolderName"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:creditCardNumber"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:expiryDate"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:paymentAmount"/>
+              </args>
+            </payloadFactory>
+            <send/>
+          </case>
+          <case regex="VISA">
+            <payloadFactory media-type="xml">
+              <format>
+                <vps:doPayment
+                  xmlns:vps="http://vps.services.esb.wso2.packt.com" xmlns:xsd="http://vps.services.esb.wso2.packt.com/xsd">
+                  <vps:paymentInfo>
+                    <xsd:billingAddress>$1</xsd:billingAddress>
+                    <xsd:cardHolderName>$2</xsd:cardHolderName>
+                    <xsd:creditCardNumber>$3</xsd:creditCardNumber>
+                    <xsd:expiryDate>$4</xsd:expiryDate>
+                    <xsd:paymentAmount>$5</xsd:paymentAmount>
+                  </vps:paymentInfo>
+                </vps:doPayment>
+              </format>
+              <args>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:billingAddress"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:cardHolderName"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:creditCardNumber"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:expiryDate"/>
+                <arg evaluator="xml" expression="//m0:doPayment/m0:paymentInfo/xsd:paymentAmount"/>
+              </args>
+            </payloadFactory>
+            <send/>
+          </case>
+          <default>
+            <log level="full"/>
+          </default>
+        </switch>
+      </inSequence>
+      <outSequence>
+        <filter regex="VISA" source="get-property('symbol')">
+          <then>
+            <payloadFactory media-type="xml">
+              <format>
+                <m0:doPaymentResponse
+                  xmlns:m0="http://ccps.services.esb.wso2.packt.com" xmlns:xsd="http://ccps.services.esb.wso2.packt.com/xsd">
+                  <m0:return>
+                    <xsd:paymentStatus>$1</xsd:paymentStatus>
+                  </m0:return>
+                </m0:doPaymentResponse>
+              </format>
+              <args>
+                <arg evaluator="xml"
+                  expression="//vps:doPaymentResponse/vps:return/xsd:paymentStatus"
+                  xmlns:vps="http://vps.services.esb.wso2.packt.com" xmlns:xsd="http://vps.services.esb.wso2.packt.com/xsd"/>
+              </args>
+            </payloadFactory>
+          </then>
+          <else>
+            <filter regex="AMEX" source="get-property('symbol')">
+              <then>
+                <payloadFactory media-type="xml">
+                  <format>
+                    <m0:doPaymentResponse
+                      xmlns:m0="http://ccps.services.esb.wso2.packt.com" xmlns:xsd="http://ccps.services.esb.wso2.packt.com/xsd">
+                      <m0:return>
+                        <xsd:paymentStatus>$1</xsd:paymentStatus>
+                      </m0:return>
+                    </m0:doPaymentResponse>
+                  </format>
+                  <args>
+                    <arg evaluator="xml"
+                      expression="//aps:doPaymentResponse/aps:return/xsd:paymentStatus"
+                      xmlns:aps="http://aps.services.esb.wso2.packt.com" xmlns:xsd="http://aps.services.esb.wso2.packt.com/xsd"/>
+                  </args>
+                </payloadFactory>
+              </then>
+              <else/>
+            </filter>
+          </else>
+        </filter>
+        <send/>
+      </outSequence>
+      <faultSequence/>
+    </target>
+    <publishWSDL>
+      <wsdl:definitions
+        targetNamespace="http://ccps.services.esb.wso2.packt.com"
+        xmlns:ax23="http://ccps.services.esb.wso2.packt.com/xsd"
+        xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
+        xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+        xmlns:ns="http://ccps.services.esb.wso2.packt.com"
+        xmlns:ns1="http://org.apache.axis2/xsd"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+        xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <wsdl:documentation>CreditCardPaymentService</wsdl:documentation>
+        <wsdl:types>
+          <xs:schema attributeFormDefault="qualified"
+            elementFormDefault="qualified" targetNamespace="http://ccps.services.esb.wso2.packt.com/xsd">
+            <xs:complexType name="PaymentInfo">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="billingAddress"
+                  nillable="true" type="xs:string"/>
+                <xs:element minOccurs="0" name="cardHolderName"
+                  nillable="true" type="xs:string"/>
+                <xs:element minOccurs="0" name="cardType"
+                  nillable="true" type="xs:string"/>
+                <xs:element minOccurs="0" name="creditCardNumber"
+                  nillable="true" type="xs:string"/>
+                <xs:element minOccurs="0" name="expiryDate"
+                  nillable="true" type="xs:string"/>
+                <xs:element minOccurs="0" name="paymentAmount" type="xs:double"/>
+              </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PaymentConfirmation">
+              <xs:sequence>
+                <xs:element minOccurs="0" name="paymentStatus" type="xs:boolean"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:schema>
+          <xs:schema attributeFormDefault="qualified"
+            elementFormDefault="qualified"
+            targetNamespace="http://ccps.services.esb.wso2.packt.com" xmlns:ax24="http://ccps.services.esb.wso2.packt.com/xsd">
+            <xs:import namespace="http://ccps.services.esb.wso2.packt.com/xsd"/>
+            <xs:element name="doPayment">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="paymentInfo"
+                    nillable="true" type="ax23:PaymentInfo"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="doPaymentResponse">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="return"
+                    nillable="true" type="ax23:PaymentConfirmation"/>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:schema>
+        </wsdl:types>
+        <wsdl:message name="doPaymentRequest">
+          <wsdl:part element="ns:doPayment" name="parameters"/>
+        </wsdl:message>
+        <wsdl:message name="doPaymentResponse">
+          <wsdl:part element="ns:doPaymentResponse" name="parameters"/>
+        </wsdl:message>
+        <wsdl:portType name="CreditCardPaymentServicePortType">
+          <wsdl:operation name="doPayment">
+            <wsdl:input message="ns:doPaymentRequest" wsaw:Action="urn:doPayment"/>
+            <wsdl:output message="ns:doPaymentResponse" wsaw:Action="urn:doPaymentResponse"/>
+          </wsdl:operation>
+        </wsdl:portType>
+        <wsdl:binding name="CreditCardPaymentServiceSoap11Binding" type="ns:CreditCardPaymentServicePortType">
+          <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+          <wsdl:operation name="doPayment">
+            <soap:operation soapAction="urn:doPayment" style="document"/>
+            <wsdl:input>
+              <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+              <soap:body use="literal"/>
+            </wsdl:output>
+          </wsdl:operation>
+        </wsdl:binding>
+        <wsdl:binding name="CreditCardPaymentServiceSoap12Binding" type="ns:CreditCardPaymentServicePortType">
+          <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+          <wsdl:operation name="doPayment">
+            <soap12:operation soapAction="urn:doPayment" style="document"/>
+            <wsdl:input>
+              <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+              <soap12:body use="literal"/>
+            </wsdl:output>
+          </wsdl:operation>
+        </wsdl:binding>
+        <wsdl:binding name="CreditCardPaymentServiceHttpBinding" type="ns:CreditCardPaymentServicePortType">
+          <http:binding verb="POST"/>
+          <wsdl:operation name="doPayment">
+            <http:operation location="doPayment"/>
+            <wsdl:input>
+              <mime:content part="parameters" type="text/xml"/>
+            </wsdl:input>
+            <wsdl:output>
+              <mime:content part="parameters" type="text/xml"/>
+            </wsdl:output>
+          </wsdl:operation>
+        </wsdl:binding>
+        <wsdl:service name="CreditCardPaymentService">
+          <wsdl:port binding="ns:CreditCardPaymentServiceSoap11Binding" name="CreditCardPaymentServiceHttpSoap11Endpoint">
+            <soap:address location="http://192.168.1.4:9000/services/CreditCardPaymentService.CreditCardPaymentServiceHttpSoap11Endpoint"/>
+          </wsdl:port>
+          <wsdl:port binding="ns:CreditCardPaymentServiceSoap11Binding" name="CreditCardPaymentServiceHttpsSoap11Endpoint">
+            <soap:address location="https://192.168.1.4:9002/services/CreditCardPaymentService.CreditCardPaymentServiceHttpsSoap11Endpoint"/>
+          </wsdl:port>
+          <wsdl:port binding="ns:CreditCardPaymentServiceSoap12Binding" name="CreditCardPaymentServiceHttpSoap12Endpoint">
+            <soap12:address location="http://192.168.1.4:9000/services/CreditCardPaymentService.CreditCardPaymentServiceHttpSoap12Endpoint"/>
+          </wsdl:port>
+          <wsdl:port binding="ns:CreditCardPaymentServiceSoap12Binding" name="CreditCardPaymentServiceHttpsSoap12Endpoint">
+            <soap12:address location="https://192.168.1.4:9002/services/CreditCardPaymentService.CreditCardPaymentServiceHttpsSoap12Endpoint"/>
+          </wsdl:port>
+          <wsdl:port binding="ns:CreditCardPaymentServiceHttpBinding" name="CreditCardPaymentServiceHttpEndpoint">
+            <http:address location="http://192.168.1.4:9000/services/CreditCardPaymentService.CreditCardPaymentServiceHttpEndpoint"/>
+          </wsdl:port>
+          <wsdl:port binding="ns:CreditCardPaymentServiceHttpBinding" name="CreditCardPaymentServiceHttpsEndpoint">
+            <http:address location="https://192.168.1.4:9002/services/CreditCardPaymentService.CreditCardPaymentServiceHttpsEndpoint"/>
+          </wsdl:port>
+        </wsdl:service>
+      </wsdl:definitions>
+    </publishWSDL>
+  </proxy>
+</definitions>
