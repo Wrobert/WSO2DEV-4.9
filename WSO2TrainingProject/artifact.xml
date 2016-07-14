@@ -29,4 +29,7 @@
     <artifact name="AccountRegistryProxy" groupId="com.wso2.training.HiRollerBankProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/proxy-services/AccountRegistryProxy.xml</file>
     </artifact>
+    <artifact name="FileRead" groupId="com.wso2.training.HiRollerBankProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/FileRead.xml</file>
+    </artifact>
 </artifacts>
