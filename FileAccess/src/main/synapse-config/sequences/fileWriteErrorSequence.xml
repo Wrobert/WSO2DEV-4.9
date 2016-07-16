@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="fileWriteErrorSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log category="ERROR" description="FileWrite Error Message"
+    level="full" separator=","/>
+</sequence>

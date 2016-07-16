@@ -1,23 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<proxy name="FileAccessProxy" startOnLoad="true" trace="disable"
+<proxy name="FileCsvProxy" startOnLoad="true" trace="disable"
   transports="vfs" xmlns="http://ws.apache.org/ns/synapse">
   <target>
     <inSequence>
       <log level="full"/>
-      <property
-        expression="fn:concat(fn:substring-after(get-property('MessageID'), 'urn:uuid:'), '.txt')"
-        name="transport.vfs.ReplyFileName" scope="transport"
-        type="STRING" xmlns:ns2="http://org.apache.synapse/xsd"/>
-      <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
-      <send>
-        <endpoint>
-          <address trace="disable" uri="vfs:file:///D:/Projects/TAP/WSO2DEV-4.9/SAP/tmp/OUT"/>
-        </endpoint>
-      </send>
+      <clone>
+        <target sequence="fileWriteSequence"/>
+      </clone>
     </inSequence>
     <outSequence/>
     <faultSequence>
-      <log category="ERROR" level="full"/>
+      <log category="ERROR" description="" level="full" separator=","/>
     </faultSequence>
   </target>
   <parameter name="transport.PollInterval">5</parameter>
@@ -27,7 +20,7 @@
   <parameter name="transport.vfs.ActionAfterProcess">MOVE</parameter>
   <parameter name="transport.vfs.FailedRecordsFileName">transferFails.log</parameter>
   <parameter name="transport.vfs.ActionAfterFailure">MOVE</parameter>
-  <parameter name="transport.vfs.FileNamePattern">.*\.csv</parameter>
+  <parameter name="transport.vfs.FileNamePattern">.*.txt</parameter>
   <parameter name="transport.vfs.MoveTimestampFormat">yyyy-MM-dd'T'HH:mm:ss.SSSZ_</parameter>
   <parameter name="transport.vfs.MoveFailedRecordTimestampFormat">yyyy-MM-dd'T'HH:mm:ss.SSSZ_</parameter>
 </proxy>

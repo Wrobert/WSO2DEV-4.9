@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="HiRollerBankAcoountsEndpoint" groupId="com.example.DevRegistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+ype>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="tmp-out" groupId="com.example.DevRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
         <item>
-            <file>endpoints\HiRollerBankAcoountsEndpoint.xml</file>
-            <path>/_system/governance/endpoints</path>
+            <file>endpoints/FileTmpOut.xml</file>
+            <path>/_system/governance/endpoints/fileTmpOut</path>
             <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
         </item>
     </artifact>

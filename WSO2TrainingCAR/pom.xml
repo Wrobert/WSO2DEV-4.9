@@ -9,6 +9,8 @@
   <name>WSO2TrainingCAR</name>
   <description>WSO2TrainingCAR</description>
   <properties>
+    <com.wso2.training.HiRollerBankProject.proxy-service_._PropertyTestProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._PropertyTestProxy>
+    
     <com.wso2.training.HiRollerBankProject.proxy-service_._TranslatorProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._TranslatorProxy>
     <com.wso2.training.HiRollerBankProject.message-store_._EchoMessageStore>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.message-store_._EchoMessageStore>
     <com.wso2.training.HiRollerBankProject.proxy-service_._MessageStoreProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._MessageStoreProxy>
@@ -19,6 +21,7 @@
     <com.wso2.training.HiRollerBankProject.proxy-service_._AccountProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._AccountProxy>
     <com.wso2.training.HiRollerBankProject.proxy-service_._AccountRegistryProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._AccountRegistryProxy>
     <com.wso2.training.HiRollerBankProject.message-processors_._EchoMessageProcessor>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.message-processors_._EchoMessageProcessor>
+    <com.wso2.training.HiRollerBankProject.endpoint_._EsbEchoEndpoint>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.endpoint_._EsbEchoEndpoint>
     <com.wso2.training.HiRollerBankProject.proxy-service_._ContentBasedRouterProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._ContentBasedRouterProxy>
   </properties>
   <dependencies>
@@ -79,6 +82,18 @@
     <dependency>
       <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
       <artifactId>AccountRegistryProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.wso2.training.HiRollerBankProject.endpoint</groupId>
+      <artifactId>EsbEchoEndpoint</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+        <dependency>
+      <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
+      <artifactId>PropertyTestProxy</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

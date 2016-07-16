@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="PropertyTestProxy" startOnLoad="true" trace="disable"
+  transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <property name="TestValue Axis2" scope="axis2" type="STRING" value="GOING IN"/>
+      <property name="TestValue Synapse" scope="default" type="STRING" value="GOING IN"/>
+      <log level="custom">
+        <property name="Value IN" value="Static Value"/>
+        <property expression="get-property('axis2','TestValue Axis2')" name="SETProperty Axis2"/>
+        <property expression="get-property('TestValue Synapse')" name="SETProperty Synapse"/>
+      </log>
+      <send>
+        <endpoint key="EsbEchoEndpoint"/>
+      </send>
+    </inSequence>
+    <outSequence>
+      <log level="custom">
+        <property name="Value OUT" value="Static Value"/>
+        <property expression="get-property('axis2','TestValue Axis2')" name="SETProperty Axis2"/>
+        <property expression="get-property('TestValue Synapse')" name="SETProperty Synapse"/>
+      </log>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </target>
+</proxy>
