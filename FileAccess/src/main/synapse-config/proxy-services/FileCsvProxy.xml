@@ -5,13 +5,20 @@
     <inSequence>
       <log level="full"/>
       <clone>
-        <target sequence="fileWriteSequence"/>
+        <target>
+          <sequence>
+            <sequence key="sendMailSequence"/>
+          </sequence>
+        </target>
+        <target>
+          <sequence>
+            <sequence key="fileWriteSequence"/>
+          </sequence>
+        </target>
       </clone>
     </inSequence>
     <outSequence/>
-    <faultSequence>
-      <log category="ERROR" description="" level="full" separator=","/>
-    </faultSequence>
+    <faultSequence/>
   </target>
   <parameter name="transport.PollInterval">5</parameter>
   <parameter name="transport.vfs.FailedRecordsFileDestination">file:///D:/Projects/TAP/WSO2DEV-4.9/SAP/tmp/FAIL</parameter>

@@ -11,7 +11,10 @@
     <artifact name="fileWriteSequence" groupId="com.example.FileAccess.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/fileWriteSequence.xml</file>
     </artifact>
-    <artifact name="smooks-config" groupId="com.example.FileAccess.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/local-entries/smooks-config.xml</file>
+    <artifact name="sendMailSequence" groupId="com.example.FileAccess.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/sendMailSequence.xml</file>
+    </artifact>
+    <artifact name="databaseSequence" groupId="com.example.FileAccess.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/databaseSequence.xml</file>
     </artifact>
 </artifacts>

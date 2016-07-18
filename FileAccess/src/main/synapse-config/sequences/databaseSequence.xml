@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="databaseSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="full">
+    <property name="sequence" value="before-smooks"/>
+  </log>
+  <smooks config-key="smooks">
+    <input type="xml"/>
+    <output type="xml"/>
+  </smooks>
+  <log level="full">
+    <property name="sequence" value="after-smooks"/>
+  </log>
+</sequence>
