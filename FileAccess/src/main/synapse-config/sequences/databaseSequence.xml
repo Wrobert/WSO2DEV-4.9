@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="databaseSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-  <log level="full">
+  <log level="custom">
+    <property name="sequence" value="databaseSequence"/>
+  </log>
+  <log level="custom">
     <property name="sequence" value="before-smooks"/>
   </log>
   <smooks config-key="smooks">
-    <input type="xml"/>
+    <input type="text"/>
     <output type="xml"/>
   </smooks>
-  <log level="full">
+  <log level="custom">
     <property name="sequence" value="after-smooks"/>
   </log>
+  <!-- rwy iterate expression="//csv-set/csv-record" xmlns:ns2="http://org.apache.synapse/xsd" xmlns:sec="http://secservice.samples.esb.wso2.org"> -->
+  <iterate expression="//csv-set/csv-record">
+    <target>
+      <sequence>
+        <log level="full">
+          <property name="State" value="Iteration"/>
+        </log>
+        <dbreport>
+          <connection>
+            <pool>
+              <password>wso2_owner</password>
+              <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+              <url>jdbc:sqlserver://localhost:1433;databaseName=WSO2_LOCAL_DB;user=wso2_owner;password=wso2_owner;</url>
+              <user>wso2_owner</user>
+            </pool>
+          </connection>
+          <statement>
+            <sql><![CDATA[insert into FileCsvAccess values (?, ?)]]></sql>
+            <parameter expression="//csv-record/name/text()" type="VARCHAR"/>
+            <parameter expression="//csv-record/value/text()" type="VARCHAR"/>
+          </statement>
+        </dbreport>
+      </sequence>
+    </target>
+  </iterate>
 </sequence>

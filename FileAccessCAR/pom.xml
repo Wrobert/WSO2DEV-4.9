@@ -9,8 +9,8 @@
   <name>FileAccessCAR</name>
   <description>FileAccessCAR</description>
   <properties>
+    <com.example.FileAccess_._smooks-config>capp/EnterpriseServiceBus</com.example.FileAccess_._smooks-config>
     <com.example.FileAccess.sequence_._fileWriteSequence>capp/EnterpriseServiceBus</com.example.FileAccess.sequence_._fileWriteSequence>
-    
     <com.example.FileAccess.proxy-service_._FileCsvProxy>capp/EnterpriseServiceBus</com.example.FileAccess.proxy-service_._FileCsvProxy>
     <com.example.FileAccess.sequence_._sendMailSequence>capp/EnterpriseServiceBus</com.example.FileAccess.sequence_._sendMailSequence>
     <com.example.FileAccess.sequence_._fileWriteErrorSequence>capp/EnterpriseServiceBus</com.example.FileAccess.sequence_._fileWriteErrorSequence>
@@ -30,7 +30,7 @@
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
-        <dependency>
+    <dependency>
       <groupId>com.example.FileAccess.sequence</groupId>
       <artifactId>fileWriteSequence</artifactId>
       <version>1.0.0</version>
@@ -45,6 +45,12 @@
     <dependency>
       <groupId>com.example.FileAccess.sequence</groupId>
       <artifactId>sendMailSequence</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.FileAccess</groupId>
+      <artifactId>smooks-config</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
