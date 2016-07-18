@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="SOAP11Fault" groupId="com.example.WSO2SystemProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SOAP11Fault.xml</file>
+    </artifact>
+    <artifact name="main" groupId="com.example.WSO2SystemProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/main.xml</file>
+    </artifact>
+    <artifact name="fault" groupId="com.example.WSO2SystemProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/fault.xml</file>
+    </artifact>
+</artifacts>

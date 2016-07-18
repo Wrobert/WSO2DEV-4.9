@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="main" xmlns="http://ws.apache.org/ns/synapse">
+  <in>
+    <!-- Log all messages passing through -->
+    <log level="custom">
+      <property expression="get-property('To')" name="There is no proxy called:"/>
+      <property name="Please check the URL - " value="This call is logged in the database"/>
+    </log>
+    <!-- ensure that the default configuration only sends if it is one of samples -->
+    <!-- Otherwise Synapse would be an open proxy by default (BAD!) -->
+    <sequence key="SOAP11Fault"/>
+    <filter regex="http://localhost:9000.*" source="get-property('To')">
+      <then>
+        <!-- Send the messages where they have been sent (i.e. implicit "To" EPR) -->
+        <send/>
+      </then>
+      <else/>
+    </filter>
+  </in>
+  <out>
+    <send/>
+  </out>
+</sequence>

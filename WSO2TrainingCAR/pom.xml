@@ -10,24 +10,32 @@
   <description>WSO2TrainingCAR</description>
   <properties>
     <com.wso2.training.HiRollerBankProject.proxy-service_._PropertyTestProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._PropertyTestProxy>
-    
     <com.wso2.training.HiRollerBankProject.proxy-service_._TranslatorProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._TranslatorProxy>
     <com.wso2.training.HiRollerBankProject.message-store_._EchoMessageStore>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.message-store_._EchoMessageStore>
     <com.wso2.training.HiRollerBankProject.proxy-service_._MessageStoreProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._MessageStoreProxy>
     <com.wso2.training.HiRollerBankProject.endpoint_._EchoEndpoint>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.endpoint_._EchoEndpoint>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,lib/registry/handlers=jar,service/rule=aar,lib/registry/filter=jar,synapse/message-store=xml,event/stream=json,service/meta=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,synapse/api=xml,wso2/gadget=dar,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
     <com.wso2.training.HiRollerBankProject.sequence_._MessageProcessorLogSequence>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.sequence_._MessageProcessorLogSequence>
+    <com.wso2.training.HiRollerBankProject.sequence_._fault>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.sequence_._fault>
     <com.wso2.training.HiRollerBankProject.endpoint_._HiRollerBankAccountWS>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.endpoint_._HiRollerBankAccountWS>
     <com.wso2.training.HiRollerBankProject.proxy-service_._AccountProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._AccountProxy>
     <com.wso2.training.HiRollerBankProject.proxy-service_._AccountRegistryProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._AccountRegistryProxy>
     <com.wso2.training.HiRollerBankProject.message-processors_._EchoMessageProcessor>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.message-processors_._EchoMessageProcessor>
     <com.wso2.training.HiRollerBankProject.endpoint_._EsbEchoEndpoint>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.endpoint_._EsbEchoEndpoint>
+    <com.wso2.training.HiRollerBankProject.sequence_._main>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.sequence_._main>
+    <com.wso2.training.HiRollerBankProject.sequence_._SOAP11Fault>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.sequence_._SOAP11Fault>
     <com.wso2.training.HiRollerBankProject.proxy-service_._ContentBasedRouterProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._ContentBasedRouterProxy>
   </properties>
   <dependencies>
     <dependency>
       <groupId>com.wso2.training.HiRollerBankProject.endpoint</groupId>
       <artifactId>EchoEndpoint</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.wso2.training.HiRollerBankProject.endpoint</groupId>
+      <artifactId>EsbEchoEndpoint</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
@@ -57,6 +65,12 @@
     </dependency>
     <dependency>
       <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
+      <artifactId>AccountRegistryProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
       <artifactId>ContentBasedRouterProxy</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
@@ -64,6 +78,12 @@
     <dependency>
       <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
       <artifactId>MessageStoreProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
+      <artifactId>PropertyTestProxy</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
@@ -80,20 +100,20 @@
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
-      <artifactId>AccountRegistryProxy</artifactId>
+      <groupId>com.wso2.training.HiRollerBankProject.sequence</groupId>
+      <artifactId>fault</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.wso2.training.HiRollerBankProject.endpoint</groupId>
-      <artifactId>EsbEchoEndpoint</artifactId>
+      <groupId>com.wso2.training.HiRollerBankProject.sequence</groupId>
+      <artifactId>main</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
-        <dependency>
-      <groupId>com.wso2.training.HiRollerBankProject.proxy-service</groupId>
-      <artifactId>PropertyTestProxy</artifactId>
+    <dependency>
+      <groupId>com.wso2.training.HiRollerBankProject.sequence</groupId>
+      <artifactId>SOAP11Fault</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
