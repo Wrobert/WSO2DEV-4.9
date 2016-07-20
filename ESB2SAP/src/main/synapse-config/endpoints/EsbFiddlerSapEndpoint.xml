@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="EsbFiddlerSapEndpoint" xmlns="http://ws.apache.org/ns/synapse">
+  <address trace="disable" uri="http://127.0.0.1:8888/sap/bc/srt/rfc/bic/cqz_test_00001000/100/cqz_test_00001000/cqz_test_00001000"/>
+</endpoint>

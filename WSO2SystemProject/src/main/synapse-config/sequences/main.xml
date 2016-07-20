@@ -6,6 +6,22 @@
       <property expression="get-property('To')" name="There is no proxy called:"/>
       <property name="Please check the URL - " value="This call is logged in the database"/>
     </log>
+    <dbreport description="">
+      <connection>
+        <pool>
+          <password>wso2_owner</password>
+          <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+          <url>jdbc:sqlserver://localhost:1433;databaseName=WSO2_LOCAL_DB;user=wso2_owner;password=wso2_owner;</url>
+          <user>wso2_owner</user>
+        </pool>
+      </connection>
+      <statement>
+        <sql><![CDATA[insert into MainSequenceCalls values (?,?,?)]]></sql>
+        <parameter expression="get-property('To')" type="VARCHAR"/>
+        <parameter expression="get-property('SYSTEM_DATE')" type="VARCHAR"/>
+        <parameter expression="get-property('MESSAGE_FORMAT')" type="VARCHAR"/>
+      </statement>
+    </dbreport>
     <!-- ensure that the default configuration only sends if it is one of samples -->
     <!-- Otherwise Synapse would be an open proxy by default (BAD!) -->
     <sequence key="SOAP11Fault"/>

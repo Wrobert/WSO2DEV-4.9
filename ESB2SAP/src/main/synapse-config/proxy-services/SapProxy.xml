@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="SapProxy" startOnLoad="true" trace="disable"
+  transports="https http" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <endpoint key="EsbFiddlerSapEndpoint"/>
+    <inSequence>
+      <log level="full" separator=","/>
+      <sequence key="SapBasicAuthenticationSequence"/>
+      <log level="full" separator=","/>
+    </inSequence>
+    <outSequence>
+      <log level="full"/>
+      <send/>
+    </outSequence>
+    <faultSequence/>
+  </target>
+</proxy>

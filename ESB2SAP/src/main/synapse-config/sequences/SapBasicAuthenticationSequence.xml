@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="SapBasicAuthenticationSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log description="Starting Basic Authentication" level="custom"/>
+  <property
+    expression="fn:concat('Basic ', base64Encode('oetterlic:Sampras04'))"
+    name="Proxy-Authorization" scope="transport" type="STRING"/>
+  <property name="POST_TO_URI" scope="axis2" type="STRING" value="true"/>
+  <log description="Finished Basic Authentication" level="custom"/>
+  <log level="full"/>
+</sequence>
