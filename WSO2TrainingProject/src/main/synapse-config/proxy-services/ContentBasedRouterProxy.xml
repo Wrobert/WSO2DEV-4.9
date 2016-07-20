@@ -2,7 +2,6 @@
 <proxy name="ContentBasedRouterProxy" startOnLoad="true" trace="disable"
   transports="https http" xmlns="http://ws.apache.org/ns/synapse">
   <target>
-    <endpoint key="HiRollerBankAccountWS"/>
     <inSequence>
       <log level="custom" separator=",">
         <property name="STATUS" value="Account Balance Request"/>

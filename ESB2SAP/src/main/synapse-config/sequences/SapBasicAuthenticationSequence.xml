@@ -6,5 +6,4 @@
     name="Proxy-Authorization" scope="transport" type="STRING"/>
   <property name="POST_TO_URI" scope="axis2" type="STRING" value="true"/>
   <log description="Finished Basic Authentication" level="custom"/>
-  <log level="full"/>
 </sequence>
