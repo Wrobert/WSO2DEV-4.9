@@ -1,14 +1,15 @@
 POST http://sapdb10.ad.bls.ch:8000/sap/bc/srt/rfc/bic/cqz_test_00001000/100/cqz_test_00001000/cqz_test_00001000 HTTP/1.1
+Authorization: Basic b2V0dGVybGljOlNhbXByYXMwNA==
 Accept-Encoding: gzip,deflate
-Content-Type: text/xml;charset=UTF-8
+Proxy-Authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXX
+Content-Type: text/xml; charset=UTF-8
 SOAPAction: "urn:sap-com:document:sap:soap:functions:mc-style:_-BIC_-CQZ_TEST_00001000:_-bic_-cqzTest00001000Request"
-Authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXX
-Content-Length: 1529
 Host: sapdb10.ad.bls.ch:8000
 Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+User-Agent: Synapse-PT-HttpComponents-NIO
+Content-Length: 1558
 
-<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
    <soapenv:Header/>
    <soapenv:Body>
       <urn:_-bic_-cqzTest00001000>
