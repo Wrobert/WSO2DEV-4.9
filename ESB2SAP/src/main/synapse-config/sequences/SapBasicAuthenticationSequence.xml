@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="SapBasicAuthenticationSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-  <log description="Starting Basic Authentication" level="custom"/>
+  <log level="custom" separator=",">
+    <property name="STATUS" value="Starting Basic Authentication"/>
+  </log>
+  <property expression="wso2:vault-lookup('SAP.oetterlic.Password')"
+    name="password" scope="default" type="STRING"/>
+  <log category="DEBUG" level="custom">
+    <property expression="get-property('default','password')" name="PASSWORD-VAULT"/>
+  </log>
   <property
-    expression="fn:concat('Basic ', base64Encode('oetterlic:Sampras04'))"
+    expression="fn:concat('Basic ', base64Encode(fn:concat('oetterlic:',get-property('password'))))"
     name="Proxy-Authorization" scope="transport" type="STRING"/>
   <property name="POST_TO_URI" scope="axis2" type="STRING" value="true"/>
-  <log description="Finished Basic Authentication" level="custom"/>
+  <log level="custom">
+    <property name="STATUS" value="Ending Basic Authentication"/>
+  </log>
 </sequence>

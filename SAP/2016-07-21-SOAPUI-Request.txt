@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:_-bic_-cqzTest00001000>
+         <Data>
+            <!--Zero or more repetitions:-->
+            <item>
+               <channelID>10</channelID>
+               <reservationID>12345678901234</reservationID>
+               <reservationReferenceID>01234567</reservationReferenceID>
+               <creationDateTime>28/06/2016  06:01:50</creationDateTime>
+               <productID>125</productID>
+               <currency>CHF</currency>
+               <amountInCents>4400</amountInCents>
+               <vatPercentInCents>800</vatPercentInCents>
+               <personFirstName>Test</personFirstName>
+               <personLastName>User</personLastName>
+               <personBirthDate>02/01/1980</personBirthDate>
+               <paymentID>VBMI16062860016526</paymentID>
+               <paymentMethod>VIS</paymentMethod>
+               <paymentDateTime>28/06/2016  06:01:52</paymentDateTime>
+               <classType>KLASSE_1</classType>
+               <travellerType>PERSON</travellerType>
+               <tripType>EINFACH</tripType>
+               <ticketValidFromDate>29/06/2016</ticketValidFromDate>
+               <ticketValidToDate>29/06/2016</ticketValidToDate>
+               <usageDuration>1 TAGE</usageDuration>
+            </item>
+         </Data>
+      </urn:_-bic_-cqzTest00001000>
+   </soapenv:Body>
+</soapenv:Envelope>

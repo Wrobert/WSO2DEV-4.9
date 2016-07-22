@@ -3,14 +3,23 @@
   transports="https http" xmlns="http://ws.apache.org/ns/synapse">
   <target>
     <inSequence>
-      <log level="full" separator=","/>
       <sequence key="SapBasicAuthenticationSequence"/>
-      <log level="full" separator=","/>
+      <!-- <send>
+        <endpoint key="EsbFiddlerSapEndpoint"/>
+      </send> -->
+      <respond/>
     </inSequence>
     <outSequence>
-      <log level="full"/>
-      <send/>
+      <log description="Return LOG " level="full" separator=","/>
     </outSequence>
-    <faultSequence/>
+    <faultSequence>
+      <log level="custom">
+        <property name="text" value="An unexpected error occured"/>
+        <property expression="get-property('ERROR_MESSAGE')" name="message"/>
+        <property expression="get-property('ERROR_CODE')" name="code"/>
+        <property expression="get-property('ERROR_DETAIL')" name="detail"/>
+        <property expression="get-property('ERROR_EXCEPTION')" name="exception"/>
+      </log>
+    </faultSequence>
   </target>
 </proxy>
