@@ -1,0 +1,11 @@
+<endpoint xmlns="http://ws.apache.org/ns/synapse" name="EsbSapMockEndpoint" > 
+	<address uri="http://127.0.0.1:8088/sap/bc/srt/rfc/bic/cqz_test_00001000/100/cqz_test_00001000/cqz_test_00001000" > 
+		<suspendOnFailure>
+			<progressionFactor>1.0</progressionFactor>
+		</suspendOnFailure>
+		<markForSuspension>
+		  	<retriesBeforeSuspension>0</retriesBeforeSuspension>
+			<retryDelay>0</retryDelay>
+		</markForSuspension>
+	</address>
+</endpoint>

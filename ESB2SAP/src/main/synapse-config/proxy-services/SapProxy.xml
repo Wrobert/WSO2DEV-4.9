@@ -4,13 +4,12 @@
   <target>
     <inSequence>
       <sequence key="SapBasicAuthenticationSequence"/>
-      <!-- <send>
-        <endpoint key="EsbFiddlerSapEndpoint"/>
-      </send> -->
-      <respond/>
+      <send>
+        <endpoint key="EsbSapMockEndpoint"/>
+      </send>
     </inSequence>
     <outSequence>
-      <log description="Return LOG " level="full" separator=","/>
+      <log level="full"/>
     </outSequence>
     <faultSequence>
       <log level="custom">
