@@ -4,6 +4,7 @@
   <target>
     <inSequence>
       <sequence key="SapBasicAuthenticationSequence"/>
+      <log level="full"/>
       <send>
         <endpoint key="EsbSapMockEndpoint"/>
       </send>
