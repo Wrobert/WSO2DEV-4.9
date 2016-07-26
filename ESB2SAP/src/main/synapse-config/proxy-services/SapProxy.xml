@@ -3,14 +3,21 @@
   transports="https http" xmlns="http://ws.apache.org/ns/synapse">
   <target>
     <inSequence>
+      <!-- Some times .Net back end services are not supporting chunked encoding. By default when ESB calls back end it assumes back end supports chunked encoding. If your .Net back end service cannot access through proxy service you 
+        can try this. Sometimes you may get empty response for the request due to this issue. So what we have to do is add following 
+        2 lines to in sequence: -->
+      <property name="FORCE_HTTP_1.1" scope="axis2" type="STRING" value="true"/>
+      <property name="DISABLE_CHUNKING" scope="axis2" type="STRING" value="true"/>
+      <!--  -->
       <sequence key="SapBasicAuthenticationSequence"/>
       <log level="full"/>
       <send>
-        <endpoint key="EsbSapMockEndpoint"/>
+        <endpoint key="Esb2SapEndpoint"/>
       </send>
     </inSequence>
     <outSequence>
       <log level="full"/>
+      <send/>
     </outSequence>
     <faultSequence>
       <log level="custom">
