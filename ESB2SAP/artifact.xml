@@ -14,4 +14,7 @@
     <artifact name="EsbSapMockEndpoint" groupId="ch.bls.test.ESB2SAP.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/EsbSapMockEndpoint.xml</file>
     </artifact>
+    <artifact name="SapTestProxy" groupId="ch.bls.test.ESB2SAP.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SapTestProxy.xml</file>
+    </artifact>
 </artifacts>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="SapTestProxy" startOnLoad="true" trace="disable"
+  transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+  <target>
+    <inSequence>
+      <sequence key="SapBasicAuthenticationSequence"/>
+      <header name="Action" scope="default" value="urn:sap-com:document:sap:soap:functions:mc-style:_-BIC_-CQZ_TEST_00001000:_-bic_-cqzTest00001000Request"/>
+      <log level="full"/>
+      <respond/>
+    </inSequence>
+    <outSequence>
+      <log level="full"/>
+      <send/>
+    </outSequence>
+    <faultSequence>
+      <log level="custom">
+        <property name="text" value="An unexpected error occured"/>
+        <property expression="get-property('ERROR_MESSAGE')" name="message"/>
+        <property expression="get-property('ERROR_CODE')" name="code"/>
+        <property expression="get-property('ERROR_DETAIL')" name="detail"/>
+        <property expression="get-property('ERROR_EXCEPTION')" name="exception"/>
+      </log>
+      <send/>
+    </faultSequence>
+  </target>
+</proxy>

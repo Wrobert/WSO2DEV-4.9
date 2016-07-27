@@ -27,6 +27,7 @@
         <property expression="get-property('ERROR_DETAIL')" name="detail"/>
         <property expression="get-property('ERROR_EXCEPTION')" name="exception"/>
       </log>
+      <send/>
     </faultSequence>
   </target>
 </proxy>
