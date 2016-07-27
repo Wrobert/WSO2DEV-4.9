@@ -20,4 +20,7 @@
     <artifact name="SapSendOutSequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/SapSendOutSequence.xml</file>
     </artifact>
+    <artifact name="VbeEsbSapSelectDatabase" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/VbeEsbSapSelectDatabase.xml</file>
+    </artifact>
 </artifacts>

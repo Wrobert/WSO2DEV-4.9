@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="VbeEsbSapSelectDatabase" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="custom">
+    <property name="DB lookup/change from table VbeEsbSap" value="true"/>
+  </log>
+  <dblookup>
+    <connection>
+      <pool>
+        <password>wso2_owner</password>
+        <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+        <url>jdbc:sqlserver://localhost:1433;databaseName=WSO2_LOCAL_DB;user=wso2_owner;password=wso2_owner;</url>
+        <user>wso2_owner</user>
+      </pool>
+    </connection>
+    <statement>
+      <sql><![CDATA[
+      SELECT TOP 50 [channelID]
+      ,[reservationID]
+      ,[reservationReferenceID]
+      ,[creationDateTime]
+      ,[productID]
+      ,[currency]
+      ,[amountInCents]
+      ,[vatPercentInCents]
+      ,[personFirstName]
+      ,[personLastName]
+      ,[personBirthDate]
+      ,[paymentID]
+      ,[paymentMethod]
+      ,[paymentDateTime]
+      ,[classType]
+      ,[travellerType]
+      ,[tripType]
+      ,[ticketValidFromDate]
+      ,[ticketValidToDate]
+      ,[usageDuration]
+  FROM [WSO2_LOCAL_DB].[dbo].[VbeEsbSap];]]></sql>
+      <result column="channelID" name="channel-id"/>
+    </statement>
+  </dblookup>
+  <log level="custom">
+    <property name="DB lookup/change from table VbeEsbSap finished" value="true"/>
+  </log>
+  <log level="custom">
+    <property
+      expression="fn:concat('VBE Channel ID = ',get-property('channel-id'))" name="text"/>
+  </log>
+</sequence>
