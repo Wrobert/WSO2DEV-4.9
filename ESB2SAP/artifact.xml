@@ -17,4 +17,7 @@
     <artifact name="SapTestProxy" groupId="ch.bls.test.ESB2SAP.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/proxy-services/SapTestProxy.xml</file>
     </artifact>
+    <artifact name="SapSendOutSequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SapSendOutSequence.xml</file>
+    </artifact>
 </artifacts>

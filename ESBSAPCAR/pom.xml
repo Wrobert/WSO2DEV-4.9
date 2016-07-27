@@ -12,6 +12,7 @@
     <ch.bls.test.ESB2SAP.endpoint_._EsbFiddlerSapEndpoint>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.endpoint_._EsbFiddlerSapEndpoint>
     <ch.bls.test.ESB2SAP.proxy-service_._SapProxy>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.proxy-service_._SapProxy>
     <ch.bls.test.ESB2SAP.proxy-service_._SapTestProxy>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.proxy-service_._SapTestProxy>
+    <ch.bls.test.ESB2SAP.sequence_._SapSendOutSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SapSendOutSequence>
     <ch.bls.test.ESB2SAP.endpoint_._Esb2SapEndpoint>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.endpoint_._Esb2SapEndpoint>
     <ch.bls.test.ESB2SAP.sequence_._SapBasicAuthenticationSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SapBasicAuthenticationSequence>
     <ch.bls.test.ESB2SAP.endpoint_._EsbSapMockEndpoint>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.endpoint_._EsbSapMockEndpoint>
@@ -51,6 +52,12 @@
     <dependency>
       <groupId>ch.bls.test.ESB2SAP.proxy-service</groupId>
       <artifactId>SapTestProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>ch.bls.test.ESB2SAP.sequence</groupId>
+      <artifactId>SapSendOutSequence</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

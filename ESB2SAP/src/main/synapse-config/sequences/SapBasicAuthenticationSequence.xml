@@ -7,7 +7,7 @@
     name="password" scope="default" type="STRING"/>
   <property
     expression="fn:concat('Basic ', base64Encode(fn:concat('oetterlic:',get-property('password'))))"
-    name="Proxy-Authorization" scope="transport" type="STRING"/>
+    name="Authorization" scope="transport" type="STRING"/>
   <property name="POST_TO_URI" scope="axis2" type="STRING" value="true"/>
   <log level="custom">
     <property expression="get-property('default','password')" name="PASSWORD-VAULT"/>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="SapSendOutSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <header name="Action" scope="default" value="urn:sap-com:document:sap:soap:functions:mc-style:_-BIC_-CQZ_TEST_00001000:_-bic_-cqzTest00001000Request"/>
+  <log level="full"/>
+</sequence>
