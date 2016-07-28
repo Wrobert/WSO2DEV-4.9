@@ -5,6 +5,7 @@
     <inSequence>
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
+      <store description="Vbe2SapMessageStore" messageStore="Vbe2SapMessageStore"/>
       <respond/>
     </inSequence>
     <outSequence/>

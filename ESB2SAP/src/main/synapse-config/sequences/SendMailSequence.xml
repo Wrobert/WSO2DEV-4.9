@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="SendMailSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="custom">
+    <property name="sequence" value="SendMailSequence"/>
+  </log>
+  <property name="messageType" scope="axis2" type="STRING" value="text/html"/>
+  <property name="ContentType" scope="axis2" type="STRING" value="text/html"/>
+  <property name="Subject" scope="transport" type="STRING" value="WSO2 ESB: csv/txt - File Received"/>
+  <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+  <send>
+    <endpoint name="MailEpr">
+      <address trace="disable" uri="mailto:robert.wydler@bls.ch"/>
+    </endpoint>
+  </send>
+</sequence>

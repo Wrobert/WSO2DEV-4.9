@@ -23,7 +23,16 @@
     <artifact name="VbeEsbSapSelectDatabase" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/VbeEsbSapSelectDatabase.xml</file>
     </artifact>
-    <artifact name="Vbe2SapMessageStoreTable" groupId="ch.bls.test.ESB2SAP.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
-        <file>src/main/synapse-config/message-stores/Vbe2SapMessageStoreTable.xml</file>
+    <artifact name="Vbe2SapMessageStore" groupId="ch.bls.test.ESB2SAP.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/Vbe2SapMessageStore.xml</file>
+    </artifact>
+    <artifact name="MessageStoreReplySequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/MessageStoreReplySequence.xml</file>
+    </artifact>
+    <artifact name="Vbe2SapMessageProcessor" groupId="ch.bls.test.ESB2SAP.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/Vbe2SapMessageProcessor.xml</file>
+    </artifact>
+    <artifact name="SendMailSequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/SendMailSequence.xml</file>
     </artifact>
 </artifacts>

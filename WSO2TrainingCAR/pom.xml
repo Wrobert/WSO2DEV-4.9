@@ -20,7 +20,7 @@
     <com.wso2.training.HiRollerBankProject.endpoint_._HiRollerBankAccountWS>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.endpoint_._HiRollerBankAccountWS>
     <com.wso2.training.HiRollerBankProject.proxy-service_._AccountProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._AccountProxy>
     <com.wso2.training.HiRollerBankProject.proxy-service_._AccountRegistryProxy>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.proxy-service_._AccountRegistryProxy>
-    <com.wso2.training.HiRollerBankProject.message-processors_._EchoMessageProcessor>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.message-processors_._EchoMessageProcessor>
+    <com.wso2.training.HiRollerBankProject.message-processors_._Vbe2SapMessageProcessor>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.message-processors_._Vbe2SapMessageProcessor>
     <com.wso2.training.HiRollerBankProject.endpoint_._EsbEchoEndpoint>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.endpoint_._EsbEchoEndpoint>
     <com.wso2.training.HiRollerBankProject.sequence_._main>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.sequence_._main>
     <com.wso2.training.HiRollerBankProject.sequence_._SOAP11Fault>capp/EnterpriseServiceBus</com.wso2.training.HiRollerBankProject.sequence_._SOAP11Fault>
@@ -47,7 +47,7 @@
     </dependency>
     <dependency>
       <groupId>com.wso2.training.HiRollerBankProject.message-processors</groupId>
-      <artifactId>EchoMessageProcessor</artifactId>
+      <artifactId>Vbe2SapMessageProcessor</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

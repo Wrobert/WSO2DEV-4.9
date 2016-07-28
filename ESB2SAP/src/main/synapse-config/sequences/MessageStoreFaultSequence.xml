@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="MessageStoreFaultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="full">
+    <property name="text" value="An unexpected error occured"/>
+    <property expression="get-property('ERROR_MESSAGE')" name="message"/>
+    <property expression="get-property('ERROR_CODE')" name="code"/>
+    <property expression="get-property('ERROR_DETAIL')" name="detail"/>
+    <property expression="get-property('ERROR_EXCEPTION')" name="exception"/>
+  </log>
+  <sequence key="SendMailSequence"/>
+  <drop/>
+</sequence>

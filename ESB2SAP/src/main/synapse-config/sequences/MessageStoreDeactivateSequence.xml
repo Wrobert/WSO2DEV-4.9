@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="MessageStoreDeactivateSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <log level="full">
+    <property name="STATUS" value="Message Deactivate Sequence called."/>
+  </log>
+  <sequence key="SendMailSequence"/>
+  <drop/>
+</sequence>
