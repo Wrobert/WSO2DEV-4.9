@@ -7,10 +7,7 @@
       <sequence key="SapSendOutSequence"/>
       <respond/>
     </inSequence>
-    <outSequence>
-      <log/>
-      <send/>
-    </outSequence>
+    <outSequence/>
     <faultSequence>
       <log level="custom">
         <property name="text" value="An unexpected error occured"/>
