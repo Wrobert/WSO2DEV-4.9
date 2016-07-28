@@ -23,4 +23,7 @@
     <artifact name="VbeEsbSapSelectDatabase" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/VbeEsbSapSelectDatabase.xml</file>
     </artifact>
+    <artifact name="Vbe2SapMessageStoreTable" groupId="ch.bls.test.ESB2SAP.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/Vbe2SapMessageStoreTable.xml</file>
+    </artifact>
 </artifacts>
