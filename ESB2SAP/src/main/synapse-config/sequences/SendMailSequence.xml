@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="SendMailSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-  <log level="custom">
-    <property name="sequence" value="SendMailSequence"/>
+  <log category="DEBUG" level="custom">
+    <property name="STATUS" value="SendMailSequence"/>
   </log>
   <property name="messageType" scope="axis2" type="STRING" value="text/html"/>
   <property name="ContentType" scope="axis2" type="STRING" value="text/html"/>

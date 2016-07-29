@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="MessageStoreFaultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-  <log level="custom">
+  <log category="ERROR" level="custom">
     <property name="STATUS" value="Message Fault Sequence called."/>
   </log>
-  <log level="full">
+  <log category="ERROR" level="full">
     <property name="text" value="An unexpected error occured"/>
     <property expression="get-property('ERROR_MESSAGE')" name="message"/>
     <property expression="get-property('ERROR_CODE')" name="code"/>

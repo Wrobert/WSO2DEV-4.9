@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="SapBasicAuthenticationSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
-  <log level="custom" separator=",">
+  <log category="DEBUG" level="custom" separator=",">
     <property name="STATUS" value="Starting Basic Authentication"/>
   </log>
   <property expression="wso2:vault-lookup('SAP.test_wydler.Password')"
-    name="rwyPassword" scope="default" type="STRING"/>
+    name="rwyPassword" scope="axis2" type="STRING"/>
   <property
-    expression="fn:concat('Basic ', base64Encode(fn:concat('TEST_WYDLER:',get-property('rwyPassword'))))"
+    expression="fn:concat('Basic ', base64Encode(fn:concat('TEST_WYDLER:',get-property('axis2','rwyPassword'))))"
     name="Authorization" scope="transport" type="STRING"/>
   <property name="POST_TO_URI" scope="axis2" type="STRING" value="true"/>
-  <log level="custom">
-    <property expression="get-property('default','rwyPassword')" name="PASSWORD-VAULT"/>
+  <log category="DEBUG" level="custom">
+    <property expression="get-property('default','rwyPassword')" name="PASSWORD-VAULT rwyPassword"/>
   </log>
-  <log level="custom">
+  <log category="DEBUG" level="custom">
     <property name="STATUS" value="Ending Basic Authentication"/>
   </log>
 </sequence>

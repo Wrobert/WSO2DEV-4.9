@@ -3,6 +3,9 @@
   transports="https http" xmlns="http://ws.apache.org/ns/synapse">
   <target>
     <inSequence>
+      <log category="DEBUG" level="custom" separator=",">
+        <property name="STATUS" value="Starting SapProxy"/>
+      </log>
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
       <send>
@@ -10,11 +13,11 @@
       </send>
     </inSequence>
     <outSequence>
-      <log/>
+      <log category="DEBUG" level="full"/>
       <send/>
     </outSequence>
     <faultSequence>
-      <log level="custom">
+      <log category="ERROR" level="custom">
         <property name="text" value="An unexpected error occured"/>
         <property expression="get-property('ERROR_MESSAGE')" name="message"/>
         <property expression="get-property('ERROR_CODE')" name="code"/>
