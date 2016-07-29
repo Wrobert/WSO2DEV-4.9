@@ -1,0 +1,36 @@
+OnRequest Script
+****************
+
+import com.eviware.soapui.support.types.StringToStringsMap;   
+ // Get the global properties  
+ def globalProperties = com.eviware.soapui.model.propertyexpansion.PropertyExpansionUtils.globalProperties;   
+ String httpUsername = globalProperties['httpUsername'].value;  
+ String httpPassword = globalProperties['httpPassword'].value;   
+ 
+ // Setup error results  
+ def errorResult = {
+ def response = new com.eviware.soapui.impl.wsdl.mock.WsdlMockResult( mockRequest )
+ mockRequest.httpResponse.status = 401
+ mockRequest.httpResponse.writer << "ERROR"
+ return response
+}
+ // Get the Request Headers  
+def auth = mockRequest.requestHeaders["Authorization"] 
+if ( auth  ) {
+      def value = auth[0]
+      if ( value.startsWith("Basic ")) {
+       value = value.substring( 6 )
+       def up = new String(value.decodeBase64()).split(":")
+       def user = up[0]
+       def pass = up[1]
+       log.info "$user $pass"
+       if( !(user == httpUsername && pass == httpPassword) ) {
+        return errorResult.call()
+       }
+      } else {
+       return errorResult.call()
+      }  
+   } else {
+    return errorResult.call()
+   }
+

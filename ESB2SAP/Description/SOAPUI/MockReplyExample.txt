@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:sap-com:document:sap:soap:functions:mc-style">
+   <soapenv:Body>
+      <urn:_-bic_-cqzTest00001000Response>
+        SessionID> = ${sessionid}
+        Reservationid = ${reservationid}
+        Reservationreferenceid = ${reservationreferenceid}
+        Personfirstname = ${personfirstname}
+        Personlastname = ${personlastname}
+      </urn:_-bic_-cqzTest00001000Response>
+   </soapenv:Body>
+</soapenv:Envelope>
+
+
+Script
+******
+// create XmlHolder for request content
+def holder = new com.eviware.soapui.support.XmlHolder( mockRequest.requestContent )
+// get argument 
+def arg1 = holder["//Reservationid"]
+def arg2 = holder["//Personfirstname"]
+def arg3 = holder["//Personlastname"]
+def arg4 = holder["//Reservationreferenceid"]
+context.sessionid=Math.random()
+context.reservationid=arg1
+context.personfirstname=arg2
+context.personlastname=arg3
+context.reservationreferenceid=arg4
+

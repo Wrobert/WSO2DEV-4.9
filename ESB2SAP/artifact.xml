@@ -35,4 +35,13 @@
     <artifact name="SendMailSequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/SendMailSequence.xml</file>
     </artifact>
+    <artifact name="SapStoreForwardProxy" groupId="ch.bls.test.ESB2SAP.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SapStoreForwardProxy.xml</file>
+    </artifact>
+    <artifact name="MessageStoreFaultSequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/MessageStoreFaultSequence.xml</file>
+    </artifact>
+    <artifact name="MessageStoreDeactivateSequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/MessageStoreDeactivateSequence.xml</file>
+    </artifact>
 </artifacts>

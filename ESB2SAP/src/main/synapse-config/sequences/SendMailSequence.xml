@@ -5,7 +5,7 @@
   </log>
   <property name="messageType" scope="axis2" type="STRING" value="text/html"/>
   <property name="ContentType" scope="axis2" type="STRING" value="text/html"/>
-  <property name="Subject" scope="transport" type="STRING" value="WSO2 ESB: csv/txt - File Received"/>
+  <property name="Subject" scope="transport" type="STRING" value="WSO2 ESB: Could not send stored message to SAP BI [Service: EBSSAPCAR]. Communication Error or Message Processor deactivated."/>
   <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
   <send>
     <endpoint name="MailEpr">
