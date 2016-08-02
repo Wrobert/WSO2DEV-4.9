@@ -3,13 +3,13 @@
   transports="https http" xmlns="http://ws.apache.org/ns/synapse">
   <target>
     <inSequence>
-      <log category="DEBUG" level="custom" separator=",">
+      <log level="custom" separator=",">
         <property name="STATUS" value="Starting SapProxy"/>
       </log>
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
       <send>
-        <endpoint key="EsbFiddlerSapEndpoint"/>
+        <endpoint key="Esb2SapEndpoint"/>
       </send>
     </inSequence>
     <outSequence>

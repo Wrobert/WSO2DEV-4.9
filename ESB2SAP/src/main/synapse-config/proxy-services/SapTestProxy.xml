@@ -3,8 +3,8 @@
   transports="http https" xmlns="http://ws.apache.org/ns/synapse">
   <target>
     <inSequence>
-      <log category="DEBUG" level="custom" separator=",">
-        <property name="STATUS" value="Starting SapStoreForwardProxy"/>
+      <log level="custom" separator=",">
+        <property name="STATUS" value="Starting SapTestProxy"/>
       </log>
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>

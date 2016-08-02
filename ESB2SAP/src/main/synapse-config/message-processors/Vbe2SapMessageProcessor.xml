@@ -2,7 +2,7 @@
 <messageProcessor
   class="org.apache.synapse.message.processor.impl.forwarder.ScheduledMessageForwardingProcessor"
   messageStore="Vbe2SapMessageStore" name="Vbe2SapMessageProcessor"
-  targetEndpoint="EsbFiddlerSapEndpoint" xmlns="http://ws.apache.org/ns/synapse">
+  targetEndpoint="Esb2SapEndpoint" xmlns="http://ws.apache.org/ns/synapse">
   <parameter name="client.retry.interval">5000</parameter>
   <parameter name="max.delivery.attempts">4</parameter>
   <parameter name="member.count">1</parameter>
