@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="Esb2SapEndpoint" groupId="com.example.ESB2SAPregistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>DEV\endpoints\Esb2SapEndpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="EsbFiddlerSapEndpoint" groupId="com.example.ESB2SAPregistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>DEV\endpoints\EsbFiddlerSapEndpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="EsbSapMockEndpoint" groupId="com.example.ESB2SAPregistry.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>DEV\endpoints\EsbSapMockEndpoint.xml</file>
+            <path>/_system/governance/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+</artifacts>

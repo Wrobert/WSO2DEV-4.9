@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example.ESBSAPCAR</groupId>
-  <artifactId>ESBSAPCAR</artifactId>
+  <artifactId>ESB2SapCAR</artifactId>
   <version>1.0.0</version>
   <packaging>carbon/application</packaging>
   <name>ESBSAPCAR</name>
@@ -15,36 +15,15 @@
     <ch.bls.test.ESB2SAP.sequence_._MessageStoreFaultSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._MessageStoreFaultSequence>
     <ch.bls.test.ESB2SAP.message-store_._Vbe2SapMessageStore>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.message-store_._Vbe2SapMessageStore>
     <ch.bls.test.ESB2SAP.sequence_._SendMailSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SendMailSequence>
-    <ch.bls.test.ESB2SAP.endpoint_._EsbSapMockEndpoint>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.endpoint_._EsbSapMockEndpoint>
     <ch.bls.test.ESB2SAP.sequence_._SapBasicAuthenticationSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SapBasicAuthenticationSequence>
-    <ch.bls.test.ESB2SAP.endpoint_._Esb2SapEndpoint>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.endpoint_._Esb2SapEndpoint>
     <ch.bls.test.ESB2SAP.proxy-service_._SapTestProxy>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.proxy-service_._SapTestProxy>
     <ch.bls.test.ESB2SAP.sequence_._SapSendOutSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SapSendOutSequence>
     <ch.bls.test.ESB2SAP.proxy-service_._SapStoreForwardProxy>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.proxy-service_._SapStoreForwardProxy>
     <ch.bls.test.ESB2SAP.message-processors_._Vbe2SapMessageProcessor>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.message-processors_._Vbe2SapMessageProcessor>
     <ch.bls.test.ESB2SAP.sequence_._MessageStoreReplySequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._MessageStoreReplySequence>
-    <ch.bls.test.ESB2SAP.endpoint_._EsbFiddlerSapEndpoint>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.endpoint_._EsbFiddlerSapEndpoint>
     <ch.bls.test.ESB2SAP.sequence_._VbeEsbSapSelectDatabase>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._VbeEsbSapSelectDatabase>
   </properties>
   <dependencies>
-    <dependency>
-      <groupId>ch.bls.test.ESB2SAP.endpoint</groupId>
-      <artifactId>Esb2SapEndpoint</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>ch.bls.test.ESB2SAP.endpoint</groupId>
-      <artifactId>EsbFiddlerSapEndpoint</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>ch.bls.test.ESB2SAP.endpoint</groupId>
-      <artifactId>EsbSapMockEndpoint</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
     <dependency>
       <groupId>ch.bls.test.ESB2SAP.message-processors</groupId>
       <artifactId>Vbe2SapMessageProcessor</artifactId>
