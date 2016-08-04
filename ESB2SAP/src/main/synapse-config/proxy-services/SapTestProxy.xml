@@ -4,7 +4,7 @@
   <target>
     <inSequence>
       <log level="custom" separator=",">
-        <property name="STATUS" value="Starting SapTestProxy"/>
+        <property name="STATUS" value="Starting SapStoreForwardProxy"/>
       </log>
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
@@ -26,4 +26,5 @@
       <send/>
     </faultSequence>
   </target>
+  <publishWSDL key="gov:wsdl/sapdb10.wsdl"/>
 </proxy>

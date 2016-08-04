@@ -20,4 +20,11 @@
             <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
         </item>
     </artifact>
+    <artifact name="sapdb10_wsdl" groupId="ch.bls.esb.sap.test.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>DEV/wsdl/sapdb10.wsdl</file>
+            <path>/_system/governance/wsdl</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
 </artifacts>
