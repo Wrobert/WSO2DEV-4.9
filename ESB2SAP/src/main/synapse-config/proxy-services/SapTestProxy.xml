@@ -26,5 +26,5 @@
       <send/>
     </faultSequence>
   </target>
-  <publishWSDL key="gov:wsdl/sapdb10.wsdl"/>
+  <publishWSDL key="gov:bls/sap/wsdl/sapdb10.wsdl"/>
 </proxy>

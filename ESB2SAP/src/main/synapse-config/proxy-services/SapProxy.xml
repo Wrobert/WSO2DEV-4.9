@@ -9,7 +9,7 @@
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
       <send>
-        <endpoint key="gov:endpoints/Esb2SapEndpoint.xml"/>
+        <endpoint key="gov:bls/sap/endpoint/Esb2SapEndpoint.xml"/>
       </send>
     </inSequence>
     <outSequence>
@@ -27,5 +27,5 @@
       <send/>
     </faultSequence>
   </target>
-  <publishWSDL key="gov:wsdl/sapdb10.wsdl"/>
+  <publishWSDL key="gov:bls/sap/wsdl/sapdb10.wsdl"/>
 </proxy>
