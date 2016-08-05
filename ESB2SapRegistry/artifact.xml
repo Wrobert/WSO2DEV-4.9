@@ -13,20 +13,6 @@
             <mediaType>application/wsdl+xml</mediaType>
         </item>
     </artifact>
-    <artifact name="vbe2esbSimple_xsd" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
-        <item>
-            <file>bls/DEV/sap/wsdl/vbe2esbSimple.xsd</file>
-            <path>/_system/governance/custom/bls/sap/wsdl</path>
-            <mediaType>application/x-xsd+xml</mediaType>
-        </item>
-    </artifact>
-    <artifact name="vbe2esbComplex_xsd" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
-        <item>
-            <file>bls/DEV/sap/wsdl/vbe2esbComplex.xsd</file>
-            <path>/_system/governance/custom/bls/sap/wsdl</path>
-            <mediaType>application/x-xsd+xml</mediaType>
-        </item>
-    </artifact>
     <artifact name="Esb2SapEndpoint_xml" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
         <item>
             <file>bls/DEV/sap/endpoint/Esb2SapEndpoint.xml</file>
@@ -46,6 +32,20 @@
             <file>bls/DEV/sap/endpoint/EsbSapMockEndpoint.xml</file>
             <path>/_system/governance/custom/bls/sap/endpoint</path>
             <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="vbe2esbComplex_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/wsdl/vbe2esbComplex.xsd</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="vbe2esbSimple_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/wsdl/vbe2esbSimple.xsd</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <mediaType>application/x-xsd+xml</mediaType>
         </item>
     </artifact>
 </artifacts>

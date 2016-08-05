@@ -2,33 +2,34 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>ch.bls.esb.vbe2sap</groupId>
-  <artifactId>EsbSapRegistryCAR</artifactId>
+  <groupId>com.example.ESB2SapRegistryCAR</groupId>
+  <artifactId>ESB2SapRegistryCAR</artifactId>
   <version>1.0.0</version>
   <packaging>carbon/application</packaging>
-  <name>EsbSapRegistryCAR</name>
-  <description>EsbSapRegistryCAR</description>
+  <name>ESB2SapRegistryCAR</name>
+  <description>ESB2SapRegistryCAR</description>
   <properties>
+    <ch.bls.esb.vbe2sap.resource_._vbe2esbSimple1_xsd>capp/GovernanceRegistry</ch.bls.esb.vbe2sap.resource_._vbe2esbSimple1_xsd>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,lib/registry/handlers=jar,service/rule=aar,lib/registry/filter=jar,synapse/message-store=xml,event/stream=json,service/meta=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,synapse/api=xml,wso2/gadget=dar,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
     <com.example.ESB2SapRegistry.resource_._sapdb10_wsdl>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._sapdb10_wsdl>
+    <ch.bls.esb.vbe2sap.resource_._vbe2esbSimple_xsd>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._vbe2esbSimple_xsd>
+    <ch.bls.esb.vbe2sap.resource_._vbe2esbComplex1_xsd>capp/GovernanceRegistry</ch.bls.esb.vbe2sap.resource_._vbe2esbComplex1_xsd>
     <com.example.ESB2SapRegistry.resource_._EsbSapMockEndpoint_xml>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._EsbSapMockEndpoint_xml>
-    <ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._EsbFiddlerSapEndpoint_xml>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._EsbFiddlerSapEndpoint_xml>
-    <com.example.ESB2SapRegistry.resource_._vbe2esbSimple_xsd>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._vbe2esbSimple_xsd>
-    <ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._Esb2SapEndpoint_xml>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._Esb2SapEndpoint_xml>
-    <ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._vbe2esbInput_xsd>capp/GovernanceRegistry</ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._vbe2esbInput_xsd>
+    <ch.bls.esb.vbe2sap.resource_._vbe2esbComplex_xsd>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._vbe2esbComplex_xsd>
     <com.example.ESB2SapRegistry.resource_._EsbFiddlerSapEndpoint_xml>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._EsbFiddlerSapEndpoint_xml>
-    <ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._vbe2esb_wsdl>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._vbe2esb_wsdl>
-    <ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._sapdb10_wsdl>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._sapdb10_wsdl>
-    <com.example.ESB2SapRegistry.resource_._vbe2esbComplex_xsd>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._vbe2esbComplex_xsd>
     <com.example.ESB2SapRegistry.resource_._Esb2SapEndpoint_xml>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._Esb2SapEndpoint_xml>
-    <ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._EsbSapMockEndpoint_xml>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._EsbSapMockEndpoint_xml>
     <com.example.ESB2SapRegistry.resource_._vbe2sapImport_wsdl>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._vbe2sapImport_wsdl>
-    <ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._vbe2esbOutput_xsd>capp/GovernanceRegistry</ch.bls.esb.vbe2sap.ESB2SapRegistry.resource_._vbe2esbOutput_xsd>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>Esb2SapEndpoint_xml</artifactId>
+      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
+      <artifactId>vbe2esbComplex_xsd</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
+      <artifactId>vbe2esbSimple_xsd</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
@@ -40,31 +41,25 @@
     </dependency>
     <dependency>
       <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>EsbSapMockEndpoint_xml</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
       <artifactId>sapdb10_wsdl</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>vbe2esbComplex_xsd</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>vbe2esbSimple_xsd</artifactId>
+      <artifactId>EsbSapMockEndpoint_xml</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>com.example.ESB2SapRegistry.resource</groupId>
       <artifactId>vbe2sapImport_wsdl</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.ESB2SapRegistry.resource</groupId>
+      <artifactId>Esb2SapEndpoint_xml</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
