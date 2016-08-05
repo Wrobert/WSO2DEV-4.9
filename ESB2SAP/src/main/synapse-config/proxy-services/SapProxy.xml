@@ -9,7 +9,7 @@
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
       <send>
-        <endpoint key="gov:bls/sap/endpoint/Esb2SapEndpoint.xml"/>
+        <endpoint key="gov:custom/bls/sap/endpoint/Esb2SapEndpoint.xml"/>
       </send>
     </inSequence>
     <outSequence>

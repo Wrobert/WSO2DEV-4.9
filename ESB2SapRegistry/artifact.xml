@@ -1,30 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?><artifacts>
-    <artifact name="EsbFiddlerSapEndpoint_xml" groupId="ch.bls.esb.vbe2sap.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+    <artifact name="sapdb10_wsdl" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
         <item>
-            <file>bls/esb/sap/DEV/endpoints/EsbFiddlerSapEndpoint.xml</file>
-            <path>/_system/governance/bls/sap/endpoint</path>
-            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
-        </item>
-    </artifact>
-    <artifact name="EsbSapMockEndpoint_xml" groupId="ch.bls.esb.vbe2sap.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
-        <item>
-            <file>bls/esb/sap/DEV/endpoints/EsbSapMockEndpoint.xml</file>
-            <path>/_system/governance/bls/sap/endpoint</path>
-            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
-        </item>
-    </artifact>
-    <artifact name="Esb2SapEndpoint_xml" groupId="ch.bls.esb.vbe2sap.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
-        <item>
-            <file>bls/esb/sap/DEV/endpoints/Esb2SapEndpoint.xml</file>
-            <path>/_system/governance/bls/sap/endpoint</path>
-            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
-        </item>
-    </artifact>
-    <artifact name="sapdb10_wsdl" groupId="ch.bls.esb.vbe2sap.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
-        <item>
-            <file>bls/esb/sap/DEV/wsdl/sapdb10.wsdl</file>
-            <path>/_system/governance/bls/sap/wsdl</path>
+            <file>bls/DEV/sap/wsdl/sapdb10.wsdl</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
             <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="vbe2sapImport_wsdl" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/wsdl/vbe2sapImport.wsdl</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="vbe2esbSimple_xsd" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/wsdl/vbe2esbSimple.xsd</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="vbe2esbComplex_xsd" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/wsdl/vbe2esbComplex.xsd</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="Esb2SapEndpoint_xml" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/endpoint/Esb2SapEndpoint.xml</file>
+            <path>/_system/governance/custom/bls/sap/endpoint</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="EsbFiddlerSapEndpoint_xml" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/endpoint/EsbFiddlerSapEndpoint.xml</file>
+            <path>/_system/governance/custom/bls/sap/endpoint</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
+        </item>
+    </artifact>
+    <artifact name="EsbSapMockEndpoint_xml" groupId="com.example.ESB2SapRegistry.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/endpoint/EsbSapMockEndpoint.xml</file>
+            <path>/_system/governance/custom/bls/sap/endpoint</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
         </item>
     </artifact>
 </artifacts>
