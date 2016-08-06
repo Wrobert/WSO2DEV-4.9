@@ -26,4 +26,8 @@
       <send/>
     </faultSequence>
   </target>
+  <publishWSDL key="gov:custom/bls/sap/wsdl/vbe2esb.wsdl">
+    <resource key="gov:custom/bls/sap/wsdl/vbe2esbComplex.xsd" location="vbe2esbComplex.xsd"/>
+    <resource key="gov:custom/bls/sap/wsdl/vbe2esbSimple.xsd" location="vbe2esbSimple.xsd"/>
+  </publishWSDL>
 </proxy>

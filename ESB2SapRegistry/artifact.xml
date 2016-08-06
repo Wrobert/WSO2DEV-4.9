@@ -55,4 +55,18 @@
             <mediaType>application/x-xsd+xml</mediaType>
         </item>
     </artifact>
+    <artifact name="SoapUI-generated_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/wsdl/SoapUI-generated.xsd</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="vbe2esb_wsdl" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/sap/wsdl/vbe2esb.wsdl</file>
+            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
 </artifacts>

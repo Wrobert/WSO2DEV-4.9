@@ -4,12 +4,13 @@
   <target>
     <inSequence>
       <log level="custom" separator=",">
-        <property name="STATUS" value="Starting SapStoreForwardProxy"/>
+        <property name="STATUS" value="Starting SapProxy"/>
       </log>
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
-      <store description="Vbe2SapMessageStore" messageStore="Vbe2SapMessageStore"/>
-      <respond/>
+      <send>
+        <endpoint key="gov:custom/bls/sap/endpoint/Esb2SapEndpoint.xml"/>
+      </send>
     </inSequence>
     <outSequence>
       <log category="DEBUG" level="full"/>
@@ -26,4 +27,7 @@
       <send/>
     </faultSequence>
   </target>
+  <publishWSDL key="gov:custom/bls/sap/wsdl/vbe2sapImport.wsdl">
+    <resource key="gov:custom/bls/sap/wsdl/sapdb10.xsd" location="sapdb10.xsd"/>
+  </publishWSDL>
 </proxy>

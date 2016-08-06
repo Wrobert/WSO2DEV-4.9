@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><resource name="vbe2esb.wsdl" isCollection="false" path="/_system/governance/custom/bls/sap/wsdl/wsdl/vbe2esb.wsdl" registryUrl="https://localhost:9443/registry" status="added">
+    <mediaType>application/wsdl+xml</mediaType>
+</resource>
