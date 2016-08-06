@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema attributeFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:n0="urn:sap-com:document:sap:rfc:functions"
+  targetNamespace="urn:sap-com:document:sap:soap:functions:mc-style" xmlns:tns="urn:sap-com:document:sap:soap:functions:mc-style">
+  <xsd:import namespace="urn:sap-com:document:sap:rfc:functions" />
+  <xsd:simpleType name="char10">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="10" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char14">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="14" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char15">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="15" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char19">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="19" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char2">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="2" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char20">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="20" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char3">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char4">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="4" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char40">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="40" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char6">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="6" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char60">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="60" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="char8">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="8" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RfcException.Message.Number">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="3" />
+      <xsd:pattern value="\d*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="_-bic_-cqzTest00001000">
+    <xsd:sequence>
+      <xsd:element name="Channelid" type="tns:char2" />
+      <xsd:element name="Reservationid" type="tns:char14" />
+      <xsd:element name="Reservationreferenceid" type="tns:char8" />
+      <xsd:element name="Creationdatetime" type="tns:char19" />
+      <xsd:element name="Productid" type="tns:char4" />
+      <xsd:element name="Currency" type="tns:char3" />
+      <xsd:element name="Amountincents" type="tns:char6" />
+      <xsd:element name="Vatpercentincents" type="tns:char4" />
+      <xsd:element name="Personfirstname" type="tns:char60" />
+      <xsd:element name="Personlastname" type="tns:char60" />
+      <xsd:element name="Personbirthdate" type="tns:char10" />
+      <xsd:element name="Paymentid" type="tns:char40" />
+      <xsd:element name="Paymentmethod" type="tns:char3" />
+      <xsd:element name="Paymentdatetime" type="tns:char19" />
+      <xsd:element name="Classtype" type="tns:char8" />
+      <xsd:element name="Travellertype" type="tns:char20" />
+      <xsd:element name="Triptype" type="tns:char20" />
+      <xsd:element name="Ticketvalidfromdate" type="tns:char10" />
+      <xsd:element name="Ticketvalidtodate" type="tns:char10" />
+      <xsd:element name="Usageduration" type="tns:char15" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RfcException.Message">
+    <xsd:sequence>
+      <xsd:element name="ID" type="xsd:string" />
+      <xsd:element name="Number" type="tns:RfcException.Message.Number" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="_-bic_-cqzTest00001000.RfcException">
+    <xsd:sequence>
+      <xsd:element name="Name" type="tns:_-bic_-cqzTest00001000.RfcExceptions" />
+      <xsd:element name="Text" type="xsd:string" minOccurs="0" />
+      <xsd:element name="Message" type="tns:RfcException.Message" minOccurs="0" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="_-bic_-wcqzTest00001000">
+    <xsd:sequence>
+      <xsd:element name="item" type="tns:_-bic_-cqzTest00001000" minOccurs="0" maxOccurs="unbounded" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:simpleType name="_-bic_-cqzTest00001000.RfcExceptions">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="InternalError" />
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:element name="_-bic_-cqzTest00001000.Exception" type="tns:_-bic_-cqzTest00001000.RfcException" />
+  <xsd:element name="_-bic_-cqzTest00001000">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Data" type="tns:_-bic_-wcqzTest00001000" />
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="_-bic_-cqzTest00001000Response">
+    <xsd:complexType>
+      <xsd:sequence />
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

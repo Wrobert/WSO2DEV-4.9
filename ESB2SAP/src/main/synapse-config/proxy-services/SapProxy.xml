@@ -28,7 +28,6 @@
     </faultSequence>
   </target>
   <publishWSDL key="gov:custom/bls/sap/wsdl/vbe2sapImport.wsdl">
-    <resource key="gov:custom/bls/sap/xsd/vbe2esbComplex.xsd" location="vbe2esbComplex.xsd"/>
-    <resource key="gov:custom/bls/sap/xsd/vbe2esbSimple.xsd" location="vbe2esbSimple.xsd"/>
+    <resource key="gov:custom/bls/sap/xsd/sapdb10.xsd" location="sapdb10.xsd"/>
   </publishWSDL>
 </proxy>

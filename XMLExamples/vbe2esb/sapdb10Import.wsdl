@@ -174,7 +174,7 @@
   </wsp:Policy>
   <wsdl:types>
     <schema xmlns="http://www.w3.org/2001/XMLSchema">
-        <import namespace="urn:sap-com:document:sap:soap:functions:mc-style" schemaLocation="vbe2esbComplex.xsd"/>
+        <import namespace="urn:sap-com:document:sap:soap:functions:mc-style" schemaLocation="sapdb10.xsd"/>
     </schema>
   </wsdl:types>
   <wsdl:message name="_-bic_-cqzTest00001000">

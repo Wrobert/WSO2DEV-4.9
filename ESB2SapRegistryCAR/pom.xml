@@ -17,6 +17,7 @@
     <com.example.ESB2SapRegistry.resource_._EsbSapMockEndpoint_xml>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._EsbSapMockEndpoint_xml>
     <ch.bls.esb.vbe2sap.resource_._vbe2esbComplex_xsd>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._vbe2esbComplex_xsd>
     <com.example.ESB2SapRegistry.resource_._EsbFiddlerSapEndpoint_xml>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._EsbFiddlerSapEndpoint_xml>
+    <ch.bls.esb.vbe2sap.resource_._sapdb10_xsd>capp/GovernanceRegistry</ch.bls.esb.vbe2sap.resource_._sapdb10_xsd>
     <com.example.ESB2SapRegistry.resource_._Esb2SapEndpoint_xml>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._Esb2SapEndpoint_xml>
     <com.example.ESB2SapRegistry.resource_._vbe2sapImport_wsdl>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._vbe2sapImport_wsdl>
   </properties>
@@ -60,6 +61,12 @@
     <dependency>
       <groupId>com.example.ESB2SapRegistry.resource</groupId>
       <artifactId>Esb2SapEndpoint_xml</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
+      <artifactId>sapdb10_xsd</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
