@@ -34,20 +34,6 @@
             <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
         </item>
     </artifact>
-    <artifact name="vbe2esbComplex_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
-        <item>
-            <file>bls/DEV/sap/wsdl/vbe2esbComplex.xsd</file>
-            <path>/_system/governance/custom/bls/sap/wsdl</path>
-            <mediaType>application/x-xsd+xml</mediaType>
-        </item>
-    </artifact>
-    <artifact name="vbe2esbSimple_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
-        <item>
-            <file>bls/DEV/sap/wsdl/vbe2esbSimple.xsd</file>
-            <path>/_system/governance/custom/bls/sap/wsdl</path>
-            <mediaType>application/x-xsd+xml</mediaType>
-        </item>
-    </artifact>
     <artifact name="sapdb10_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
         <item>
             <file>bls/DEV/sap/wsdl/sapdb10.xsd</file>
@@ -55,18 +41,32 @@
             <mediaType>application/x-xsd+xml</mediaType>
         </item>
     </artifact>
-    <artifact name="SoapUI-generated_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <artifact name="vbe2esb1_wsdl" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
         <item>
-            <file>bls/DEV/sap/wsdl/SoapUI-generated.xsd</file>
-            <path>/_system/governance/custom/bls/sap/wsdl</path>
+            <file>bls/DEV/esb/wsdl/vbe2esb.wsdl</file>
+            <path>/_system/governance/custom/bls/esb/wsdl</path>
+            <mediaType>application/wsdl+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="vbe2esbSimple1_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/esb/wsdl/vbe2esbSimple.xsd</file>
+            <path>/_system/governance/custom/bls/esb/wsdl</path>
             <mediaType>application/x-xsd+xml</mediaType>
         </item>
     </artifact>
-    <artifact name="vbe2esb_wsdl" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+    <artifact name="vbe2esbComplex1_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
         <item>
-            <file>bls/DEV/sap/wsdl/vbe2esb.wsdl</file>
-            <path>/_system/governance/custom/bls/sap/wsdl</path>
-            <mediaType>application/wsdl+xml</mediaType>
+            <file>bls/DEV/esb/wsdl/vbe2esbComplex.xsd</file>
+            <path>/_system/governance/custom/bls/esb/wsdl</path>
+            <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="SoapUI-generated1_xsd" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/esb/wsdl/SoapUI-generated.xsd</file>
+            <path>/_system/governance/custom/bls/esb/wsdl</path>
+            <mediaType>application/x-xsd+xml</mediaType>
         </item>
     </artifact>
 </artifacts>
