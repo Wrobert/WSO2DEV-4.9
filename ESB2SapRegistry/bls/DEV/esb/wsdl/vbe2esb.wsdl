@@ -191,7 +191,7 @@
     <wsp:Policy>
       <wsp:PolicyReference URI="#IF___-BIC_-CQZ_TEST_00001000" />
     </wsp:Policy>
-    <wsdl:operation name="_-bic_-cqzTest00001000">
+    <wsdl:operation name="setVbeTicket">
       <wsp:Policy>
         <wsp:PolicyReference URI="#OP___-bic_-cqzTest00001000" />
       </wsp:Policy>
@@ -205,7 +205,7 @@
       <wsp:PolicyReference URI="#BN__CQZ_TEST_00001000" />
     </wsp:Policy>
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-    <wsdl:operation name="_-bic_-cqzTest00001000">
+    <wsdl:operation name="setVbeTicket">
       <soap:operation
         soapAction="urn:sap-com:document:sap:soap:functions:mc-style:_-BIC_-CQZ_TEST_00001000:_-bic_-cqzTest00001000Request"
         style="document" />
@@ -225,7 +225,7 @@
       <wsp:PolicyReference URI="#BN__CQZ_TEST_00001000_soap12" />
     </wsp:Policy>
     <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-    <wsdl:operation name="_-bic_-cqzTest00001000">
+    <wsdl:operation name="setVbeTicket">
       <wsdl:documentation>This Method writes the VBE Ticket Data.</wsdl:documentation>
       <wsoap12:operation
         soapAction="urn:sap-com:document:sap:soap:functions:mc-style:_-BIC_-CQZ_TEST_00001000:_-bic_-cqzTest00001000Request"
