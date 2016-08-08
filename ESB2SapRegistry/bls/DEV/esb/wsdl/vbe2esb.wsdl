@@ -6,6 +6,7 @@
   xmlns:n1="urn:sap-com:document:sap:rfc:functions">
   <wsdl:documentation>
     <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+
   </wsdl:documentation>
   <wsp:UsingPolicy wsdl:required="true" />
   <wsp:Policy wsu:Id="BN__CQZ_TEST_00001000">
@@ -173,8 +174,8 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsdl:types>
-      <schema xmlns="http://www.w3.org/2001/XMLSchema">
-        <import namespace="urn:sap-com:document:sap:soap:functions:mc-style" schemaLocation="vbe2esbComplex.xsd"/>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="urn:sap-com:document:sap:soap:functions:mc-style" schemaLocation="vbe2esbComplex.xsd" />
     </schema>
   </wsdl:types>
   <wsdl:message name="_-bic_-cqzTest00001000">
@@ -225,6 +226,7 @@
     </wsp:Policy>
     <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
     <wsdl:operation name="_-bic_-cqzTest00001000">
+      <wsdl:documentation>This Method writes the VBE Ticket Data.</wsdl:documentation>
       <wsoap12:operation
         soapAction="urn:sap-com:document:sap:soap:functions:mc-style:_-BIC_-CQZ_TEST_00001000:_-bic_-cqzTest00001000Request"
         style="document" />
@@ -240,6 +242,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="CQZ_TEST_00001000">
+    <wsdl:documentation>This Service will be used to write the VBE Ticket Data into SAP BI</wsdl:documentation>
     <wsdl:port name="CQZ_TEST_00001000" binding="tns:CQZ_TEST_00001000">
       <soap:address
         location="http://sapdb10.ad.bls.ch:8000/sap/bc/srt/rfc/bic/cqz_test_00001000/100/cqz_test_00001000/cqz_test_00001000" />
