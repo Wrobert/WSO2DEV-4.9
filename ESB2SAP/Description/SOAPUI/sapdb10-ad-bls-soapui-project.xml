@@ -370,7 +370,7 @@
                <Personlastname>Wydler</Personlastname>\r
                <Personbirthdate>1980-01-02</Personbirthdate>\r
                <Paymentid>VBMI16062860016526</Paymentid>\r
-               <Paymentmethod>VBM</Paymentmethod>\r
+               <Paymentmethod>VBMrrr</Paymentmethod>\r
                <Paymentdatetime>2016-06-28 06:01:52</Paymentdatetime>\r
                <Classtype>1</Classtype>\r
                <Travellertype>PERSON</Travellertype>\r
