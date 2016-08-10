@@ -41,7 +41,7 @@
             <mediaType>application/x-xsd+xml</mediaType>
         </item>
     </artifact>
-        <artifact name="vbe2esb1_wsdl" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+    <artifact name="vbe2esb1_wsdl" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
         <item>
             <file>bls/DEV/esb/wsdl/vbe2esb.wsdl</file>
             <path>/_system/governance/custom/bls/esb/wsdl</path>
@@ -67,6 +67,27 @@
             <file>bls/DEV/esb/wsdl/SoapUI-generated.xsd</file>
             <path>/_system/governance/custom/bls/esb/wsdl</path>
             <mediaType>application/x-xsd+xml</mediaType>
+        </item>
+    </artifact>
+    <artifact name="2016-08-10-SAP-TstRsrDataExp_csv" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/esb/transform/2016-08-10-PART-TstRsrDataExp-original.csv</file>
+            <path>/_system/config/custom/bls/esb/transform</path>
+            <mediaType>text/csv</mediaType>
+        </item>
+    </artifact>
+    <artifact name="VbeTicketCsvSmooks" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="GovernanceRegistry">
+        <item>
+            <file>bls/DEV/esb/transform/VbeTicketCsvSmooks.xml</file>
+            <path>/_system/config/custom/bls/esb/transform</path>
+            <mediaType>application/vnd+wso2.smooks</mediaType>
+        </item>
+    </artifact>
+    <artifact name="SapStoreForwardProxyEndpoint" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+        <item>
+            <file>bls\DEV\esb\endpoints\SapStoreForwardProxyEndpoint.xml</file>
+            <path>/_system/governance/bls/esb/endpoints</path>
+            <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
         </item>
     </artifact>
 </artifacts>

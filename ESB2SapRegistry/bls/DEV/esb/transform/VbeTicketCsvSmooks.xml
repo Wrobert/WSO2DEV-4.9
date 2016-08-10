@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><smooks-resource-list xmlns="http://www.milyn.org/xsd/smooks-1.1.xsd" xmlns:csv="http://www.milyn.org/xsd/smooks/csv-1.2.xsd" xmlns:ftl="http://www.milyn.org/xsd/smooks/freemarker-1.1.xsd">
+  <params>
+    <param name="stream.filter.type">SAX</param>
+    <param name="inputType">input.csv</param>
+    <param name="input.csv" type="input.type.actived">File:/D:\Projects\TAP\WSO2DEV-4.9\ESB2SapRegistry\bls\DEV\esb\transform\2016-08-10-PART-TstRsrDataExp-original.csv</param>
+  </params>
+  <csv:reader fields="channelID,reservationID,reservationReferenceID,creationDateTime,productID,currency,amountInCents,vatPercentInCents,personFirstName,personLastName,personBirthDate,paymentID,paymentMethod,paymentDateTime,classType,travellerType,tripType,ticketValidFromDate,ticketValidToDate,usageDuration" recordElementName="item" rootElementName="Data"/>
+  <ftl:freemarker applyOnElement="#document">
+    <ftl:template><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<ns0:_-bic_-cqzTest00001000 xmlns:ns0="urn:sap-com:document:sap:soap:functions:mc-style">
+    <Data>
+        <#list .vars["Data"]["item"] as item>
+        <item>
+            <Channelid>${.vars["item"]["channelID"]}</Channelid>            
+            <Reservationid>${.vars["item"]["reservationID"]}</Reservationid>            
+            <Reservationreferenceid>${.vars["item"]["reservationReferenceID"]}</Reservationreferenceid>            
+            <Creationdatetime>${.vars["item"]["creationDateTime"]}</Creationdatetime>            
+            <Productid>${.vars["item"]["productID"]}</Productid>            
+            <Currency>${.vars["item"]["currency"]}</Currency>            
+            <Amountincents>${.vars["item"]["amountInCents"]}</Amountincents>            
+            <Vatpercentincents>${.vars["item"]["vatPercentInCents"]}</Vatpercentincents>            
+            <Personfirstname>${.vars["item"]["personFirstName"]}</Personfirstname>            
+            <Personlastname>${.vars["item"]["personLastName"]}</Personlastname>            
+            <Personbirthdate>${.vars["item"]["personBirthDate"]}</Personbirthdate>            
+            <Paymentid>${.vars["item"]["paymentID"]}</Paymentid>            
+            <Paymentmethod>${.vars["item"]["paymentMethod"]}</Paymentmethod>            
+            <Paymentdatetime>${.vars["item"]["paymentDateTime"]}</Paymentdatetime>            
+            <Classtype>${.vars["item"]["classType"]}</Classtype>            
+            <Travellertype>${.vars["item"]["travellerType"]}</Travellertype>            
+            <Triptype>${.vars["item"]["tripType"]}</Triptype>            
+            <Ticketvalidfromdate>${.vars["item"]["ticketValidFromDate"]}</Ticketvalidfromdate>            
+            <Ticketvalidtodate>${.vars["item"]["ticketValidToDate"]}</Ticketvalidtodate>            
+            <Usageduration>${.vars["item"]["usageDuration"]}</Usageduration>            
+        </item>
+        </#list>        
+    </Data>    
+</ns0:_-bic_-cqzTest00001000>]]></ftl:template>
+    <param name="modelSrc">Workspace://ESB2SapRegistry/bls/DEV/esb/wsdl/vbe2esbComplex.xsd</param>
+    <param name="modelSrcType">XSD</param>
+    <param name="rootElementName">_-bic_-cqzTest00001000</param>
+    <param name="messageType">XML</param>
+    <param name="templateDataProvider">input</param>
+  </ftl:freemarker>
+  <resource-config selector="#document">
+    <resource>org.milyn.delivery.DomModelCreator</resource>
+  </resource-config>
+</smooks-resource-list>

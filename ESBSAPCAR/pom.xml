@@ -12,14 +12,15 @@
     <ch.bls.test.ESB2SAP.proxy-service_._SapProxy>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.proxy-service_._SapProxy>
     <artifact.types>jaggery/app=zip,synapse/priority-executor=xml,synapse/inbound-endpoint=xml,lib/registry/handlers=jar,service/rule=aar,lib/registry/filter=jar,synapse/message-store=xml,event/stream=json,service/meta=xml,synapse/proxy-service=xml,bpel/workflow=zip,synapse/sequence=xml,synapse/endpointTemplate=xml,carbon/application=car,synapse/api=xml,wso2/gadget=dar,synapse/event-source=xml,synapse/message-processors=xml,event/receiver=xml,lib/dataservice/validator=jar,synapse/template=xml,synapse/endpoint=xml,lib/carbon/ui=jar,lib/synapse/mediator=jar,event/publisher=xml,synapse/local-entry=xml,synapse/task=xml,webapp/jaxws=war,registry/resource=zip,synapse/configuration=xml,service/axis2=aar,synapse/lib=zip,synapse/sequenceTemplate=xml,event/execution-plan=siddhiql,service/dataservice=dbs,web/application=war,lib/library/bundle=jar</artifact.types>
     <ch.bls.test.ESB2SAP.sequence_._MessageStoreDeactivateSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._MessageStoreDeactivateSequence>
-    <ch.bls.test.ESB2SAP.message-store_._Vbe2SapMessageStore>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.message-store_._Vbe2SapMessageStore>
     <ch.bls.test.ESB2SAP.sequence_._MessageStoreFaultSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._MessageStoreFaultSequence>
+    <ch.bls.test.ESB2SAP.message-store_._Vbe2SapMessageStore>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.message-store_._Vbe2SapMessageStore>
     <ch.bls.test.ESB2SAP.sequence_._SendMailSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SendMailSequence>
     <ch.bls.test.ESB2SAP.sequence_._SapBasicAuthenticationSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SapBasicAuthenticationSequence>
     <ch.bls.test.ESB2SAP.proxy-service_._SapTestProxy>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.proxy-service_._SapTestProxy>
     <ch.bls.test.ESB2SAP.sequence_._SapSendOutSequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._SapSendOutSequence>
     <ch.bls.test.ESB2SAP.message-processors_._Vbe2SapMessageProcessor>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.message-processors_._Vbe2SapMessageProcessor>
     <ch.bls.test.ESB2SAP.proxy-service_._SapStoreForwardProxy>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.proxy-service_._SapStoreForwardProxy>
+    <ch.bls.esb.vbe2sap.proxy-service_._SapFileAccessProxy>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.proxy-service_._SapFileAccessProxy>
     <ch.bls.test.ESB2SAP.sequence_._MessageStoreReplySequence>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._MessageStoreReplySequence>
     <ch.bls.test.ESB2SAP.sequence_._VbeEsbSapSelectDatabase>capp/EnterpriseServiceBus</ch.bls.test.ESB2SAP.sequence_._VbeEsbSapSelectDatabase>
   </properties>
@@ -93,6 +94,12 @@
     <dependency>
       <groupId>ch.bls.test.ESB2SAP.sequence</groupId>
       <artifactId>MessageStoreDeactivateSequence</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>ch.bls.esb.vbe2sap.proxy-service</groupId>
+      <artifactId>SapFileAccessProxy</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

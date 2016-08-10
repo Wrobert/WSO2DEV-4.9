@@ -35,4 +35,7 @@
     <artifact name="MessageStoreDeactivateSequence" groupId="ch.bls.test.ESB2SAP.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/sequences/MessageStoreDeactivateSequence.xml</file>
     </artifact>
+    <artifact name="SapFileAccessProxy" groupId="ch.bls.esb.vbe2sap.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SapFileAccessProxy.xml</file>
+    </artifact>
 </artifacts>
