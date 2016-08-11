@@ -25,9 +25,7 @@
       <log level="full"/>
       <sequence key="SapBasicAuthenticationSequence"/>
       <sequence key="SapSendOutSequence"/>
-      <send>
-        <endpoint key="gov:custom/bls/sap/endpoint/Esb2SapEndpoint.xml"/>
-      </send>
+      <drop/>
     </inSequence>
     <outSequence>
       <log description="STATUS" level="full" separator=","/>

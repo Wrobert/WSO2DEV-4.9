@@ -4,7 +4,7 @@
     <param name="inputType">input.csv</param>
     <param name="input.csv" type="input.type.actived">File:/D:\Projects\TAP\WSO2DEV-4.9\ESB2SapRegistry\bls\DEV\esb\transform\2016-08-10-PART-TstRsrDataExp-original.csv</param>
   </params>
-  <csv:reader fields="channelID,reservationID,reservationReferenceID,creationDateTime,productID,currency,amountInCents,vatPercentInCents,personFirstName,personLastName,personBirthDate,paymentID,paymentMethod,paymentDateTime,classType,travellerType,tripType,ticketValidFromDate,ticketValidToDate,usageDuration" recordElementName="item" rootElementName="Data"/>
+  <csv:reader fields="channelID,reservationID,reservationReferenceID,creationDateTime,productID,currency,amountInCents,vatPercentInCents,personFirstName,personLastName,personBirthDate,paymentID,paymentMethod,paymentDateTime,classType,travellerType,tripType,ticketValidFromDate,ticketValidToDate,usageDuration" recordElementName="item" rootElementName="Data" skipLines="1"/>
   <ftl:freemarker applyOnElement="#document">
     <ftl:template><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <ns0:_-bic_-cqzTest00001000 xmlns:ns0="urn:sap-com:document:sap:soap:functions:mc-style">
