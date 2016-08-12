@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="SapProxyEndpoint" xmlns="http://ws.apache.org/ns/synapse">
+  <address trace="disable" uri="http://127.0.0.1:8280/services/SapProxy"/>
+</endpoint>

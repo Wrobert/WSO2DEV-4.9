@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ch.bls.esb.vbe2sap</groupId>
+  <artifactId>ESB2SAPparentProject</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <name>ESB2SAPparentProject</name>
+  <description>ESB2SAPparentProject</description>
+  <modules>
+    <module>../ESB2SAP</module>
+    <module>../ESB2SapRegistry</module>
+    <module>../ESB2SapRegistryCAR</module>
+    <module>../ESBSAPCAR</module>
+  </modules>
+  <properties>
+    <maven.car.deploy.skip>false</maven.car.deploy.skip>
+    <maven.deploy.skip>false</maven.deploy.skip>
+    <host>127.0.0.1</host>
+    <port>9443</port>
+    <username>admin</username>
+    <password>admin</password>
+    <trustStorePassword>wso2carbon</trustStorePassword>
+  </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+          <buildcommands />
+          <projectnatures>
+            <projectnature>org.wso2.developerstudio.eclipse.mavenmultimodule.project.nature</projectnature>
+          </projectnatures>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.wso2.maven</groupId>
+        <artifactId>maven-car-deploy-plugin</artifactId>
+        <version>1.0.0</version>
+        <extensions>true</extensions>
+        <configuration>
+          <carbonServers>
+            <CarbonServer>
+              <trustStorePath>${basedir}/src/main/resources/security/wso2carbon.jks </trustStorePath>
+              <trustStorePassword>${trustStorePassword}</trustStorePassword>
+              <trustStoreType>JKS</trustStoreType>
+              <serverUrl>https://${host}:${port}</serverUrl>
+              <userName>${username}</userName>
+              <password>${password}</password>
+              <operation>deploy|undeploy</operation>
+            </CarbonServer>
+          </carbonServers>
+          <archiveLocation>mycar_1.0.0.car</archiveLocation>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -7,7 +7,6 @@
         <property name="STATUS" value="Starting SapProxy"/>
       </log>
       <sequence key="SapBasicAuthenticationSequence"/>
-      <sequence key="SapSendOutSequence"/>
       <send>
         <endpoint key="gov:custom/bls/sap/endpoint/Esb2SapEndpoint.xml"/>
       </send>

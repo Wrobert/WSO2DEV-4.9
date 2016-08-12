@@ -83,10 +83,10 @@
             <mediaType>application/vnd+wso2.smooks</mediaType>
         </item>
     </artifact>
-    <artifact name="SapStoreForwardProxyEndpoint" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
+    <artifact name="SapProxyEndpoint" groupId="ch.bls.esb.vbe2sap.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseServiceBus">
         <item>
-            <file>bls\DEV\esb\endpoints\SapStoreForwardProxyEndpoint.xml</file>
-            <path>/_system/governance/bls/esb/endpoints</path>
+            <file>bls\DEV\esb\endpoint\SapProxyEndpoint.xml</file>
+            <path>/_system/governance/custom/bls/esb/endpoint</path>
             <mediaType>application/vnd.wso2.esb.endpoint</mediaType>
         </item>
     </artifact>

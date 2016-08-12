@@ -13,6 +13,7 @@
     <ch.bls.esb.vbe2sap.resource_._sapdb10_xsd>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._sapdb10_xsd>
     <ch.bls.esb.vbe2sap.resource_._vbe2esb1_wsdl>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._vbe2esb1_wsdl>
     <ch.bls.esb.vbe2sap.resource_._vbe2esbComplex1_xsd>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._vbe2esbComplex1_xsd>
+    <ch.bls.esb.vbe2sap.resource_._SapProxyEndpoint>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._SapProxyEndpoint>
     <com.example.ESB2SapRegistry.resource_._sapdb10_wsdl>capp/EnterpriseServiceBus</com.example.ESB2SapRegistry.resource_._sapdb10_wsdl>
     <ch.bls.esb.vbe2sap.resource_._VbeTicketCsvSmooks>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._VbeTicketCsvSmooks>
     <ch.bls.esb.vbe2sap.resource_._vbe2esb_wsdl>capp/EnterpriseServiceBus</ch.bls.esb.vbe2sap.resource_._vbe2esb_wsdl>
@@ -30,44 +31,32 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>EsbFiddlerSapEndpoint_xml</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>sapdb10_wsdl</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>EsbSapMockEndpoint_xml</artifactId>
+      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
+      <artifactId>2016-08-10-SAP-TstRsrDataExp_csv</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>ch.bls.esb.vbe2sap.resource</groupId>
-      <artifactId>sapdb10_xsd</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>vbe2sapImport_wsdl</artifactId>
-      <version>1.0.0</version>
-      <type>zip</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.ESB2SapRegistry.resource</groupId>
-      <artifactId>Esb2SapEndpoint_xml</artifactId>
+      <artifactId>SapProxyEndpoint</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
       <groupId>ch.bls.esb.vbe2sap.resource</groupId>
       <artifactId>SoapUI-generated1_xsd</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
+      <artifactId>VbeTicketCsvSmooks</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
+      <artifactId>sapdb10_xsd</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
@@ -90,20 +79,32 @@
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
-      <artifactId>2016-08-10-SAP-TstRsrDataExp_csv</artifactId>
+      <groupId>com.example.ESB2SapRegistry.resource</groupId>
+      <artifactId>Esb2SapEndpoint_xml</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
-      <artifactId>VbeTicketCsvSmooks</artifactId>
+      <groupId>com.example.ESB2SapRegistry.resource</groupId>
+      <artifactId>EsbFiddlerSapEndpoint_xml</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
     <dependency>
-      <groupId>ch.bls.esb.vbe2sap.resource</groupId>
-      <artifactId>SapStoreForwardProxyEndpoint</artifactId>
+      <groupId>com.example.ESB2SapRegistry.resource</groupId>
+      <artifactId>EsbSapMockEndpoint_xml</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.ESB2SapRegistry.resource</groupId>
+      <artifactId>sapdb10_wsdl</artifactId>
+      <version>1.0.0</version>
+      <type>zip</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.ESB2SapRegistry.resource</groupId>
+      <artifactId>vbe2sapImport_wsdl</artifactId>
       <version>1.0.0</version>
       <type>zip</type>
     </dependency>
