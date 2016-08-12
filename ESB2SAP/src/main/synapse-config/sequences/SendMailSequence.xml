@@ -7,9 +7,9 @@
   <property name="ContentType" scope="axis2" type="STRING" value="text/html"/>
   <property name="Subject" scope="transport" type="STRING" value="WSO2 ESB: Could not send stored message to SAP BI [Service: EBSSAPCAR]. Communication Error or Message Processor deactivated."/>
   <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
-  <send>
+  <!-- <send>
     <endpoint name="MailEpr">
       <address trace="disable" uri="mailto:robert.wydler@bls.ch"/>
     </endpoint>
-  </send>
+  </send> -->
 </sequence>
