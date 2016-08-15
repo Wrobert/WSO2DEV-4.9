@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsd:schema targetNamespace="http://www.bls.ch/schema/TicketAccount/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns:tns="http://www.bls.ch/schema/TicketAccount/v1" elementFormDefault="qualified" version="1.0">
+<xsd:schema targetNamespace="http://bls.ch/schema/TicketAccount/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:tns="http://bls.ch/schema/TicketAccount/v1" elementFormDefault="qualified" version="1.0">
   <xsd:element name="TicketAccount" type="tns:TicketAccountType" />
   <xsd:complexType name="TicketAccountType">
     <xsd:sequence minOccurs="1" maxOccurs="1">
