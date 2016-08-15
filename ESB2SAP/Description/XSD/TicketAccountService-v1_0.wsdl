@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
   targetNamespace="http://bls.ch/tap/contract/TicketAccount/v1"
   xmlns:tns="http://bls.ch/tap/contract/TicketAccount/v1"
-  xmlns:ctx="http://bls.ch/schema/TicketAccountingRecord/v1">
+  xmlns:ctx="http://bls.ch/schema/TicketAccount/v1">
   <wsdl:documentation>TicketAccountService</wsdl:documentation>
   <wsdl:types>
     <wsdl:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
@@ -18,7 +19,7 @@
         </wsdl:sequence>
       </wsdl:complexType>
       <wsdl:complexType name="TicketAccountBIResponseType">
-        <wsdl:sequence/>
+        <wsdl:sequence />
       </wsdl:complexType>
     </wsdl:schema>
   </wsdl:types>
@@ -31,7 +32,7 @@
   <wsdl:portType name="TicketAccountServicePortType">
     <wsdl:operation name="TicketAccountBI">
       <wsdl:input message="tns:TicketAccountBI"/>
-      <wsdl:output message="tns:TicketAccountBIResponse"/>
+      <wsdl:output message="tns:TicketAccountBIResponse" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="TicketAccountServiceSOAP11Binding" type="tns:TicketAccountServicePortType">
