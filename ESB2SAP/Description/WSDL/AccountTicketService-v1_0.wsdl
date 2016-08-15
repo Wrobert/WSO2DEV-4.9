@@ -8,28 +8,29 @@
   
   <wsdl:documentation>TicketAccountService</wsdl:documentation>
   <wsdl:types>
-    <wsdl:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
       targetNamespace="http://bls.ch/tap/contract/TicketAccount/v1">
-      <wsdl:import namespace="http://bls.ch/tap/schema/TicketAccountingRecord/v1" schemaLocation="TicketAccount-v1_0.xsd" />
+      <xsd:import namespace="http://bls.ch/tap/schema/TicketAccountingRecord/v1"
+                  schemaLocation="TicketAccountingRecord-v1_0.xsd" />
       
-      <wsdl:element name="AccountTicketMsg" type="tns:AccountTicketType" />
-      <wsdl:element name="AccountTicketMsgResponse" type="tns:AccountTicketResponseType" />
+      <xsd:element name="AccountTicketMsg" type="tns:AccountTicketType" />
+      <xsd:element name="AccountTicketMsgResponse" type="tns:AccountTicketResponseType" />
       
-      <wsdl:complexType name="AccountTicketType">
-        <wsdl:sequence>
-          <wsdl:element name="AccountTicket" type="ctx:TicketAccountingRecordType"/>
-        </wsdl:sequence>
-      </wsdl:complexType>
-      <wsdl:complexType name="AccountTicketResponseType">
-        <wsdl:sequence/>
-      </wsdl:complexType>
-    </wsdl:schema>
+      <xsd:complexType name="AccountTicketType">
+        <xsd:sequence>
+          <xsd:element name="AccountTicket" type="ctx:TicketAccountingRecordType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AccountTicketResponseType">
+        <xsd:sequence/>
+      </xsd:complexType>
+    </xsd:schema>
   </wsdl:types>
   <wsdl:message name="AccountTicketMsg">
-    <wsdl:part name="parameters" element="tns:AccountTicket"/>
+    <wsdl:part name="parameters" element="tns:AccountTicketMsg"/>
   </wsdl:message>
   <wsdl:message name="AccountTicketMsgResponse">
-    <wsdl:part name="parameters" element="tns:AccountTicketResponse"/>
+    <wsdl:part name="parameters" element="tns:AccountTicketMsgResponse"/>
   </wsdl:message>
   <wsdl:portType name="TicketAccountServicePortType">
     <wsdl:operation name="AccountTicket">
