@@ -60,5 +60,5 @@
       <xsd:element name="Trip" type="tns:TripTypeEnum" minOccurs="1" maxOccurs="1" default="EINFACH" />
       <xsd:element name="UsageDurationTag" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1" default="1" />
     </xsd:sequence>
- </xsd:complexType>
+  </xsd:complexType>
 </xsd:schema>

@@ -6,7 +6,8 @@
   xmlns:ctx="http://bls.ch/schema/TicketAccount/v1">
   <wsdl:documentation>TicketAccountService</wsdl:documentation>
   <wsdl:types>
-    <wsdl:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://bls.ch/tap/contract/TicketAccount/v1">
+    <wsdl:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+      targetNamespace="http://bls.ch/tap/contract/TicketAccount/v1">
       <wsdl:import namespace="http://bls.ch/schema/TicketAccount/v1" schemaLocation="TicketAccount-v1_0.xsd" />
       <wsdl:element name="TicketAccountBI" type="tns:TicketAccountBIType" />
       <wsdl:element name="TicketAccountBIResponse" type="tns:TicketAccountBIResponseType" />
@@ -20,39 +21,27 @@
       </wsdl:complexType>
     </wsdl:schema>
   </wsdl:types>
-  <wsdl:message name="TicketAccountBI">
+  <wsdl:message name="TicketAccountBIMsg">
     <wsdl:part name="parameters" element="tns:TicketAccountBI"></wsdl:part>
   </wsdl:message>
-  <wsdl:message name="TicketAccountBIResponse">
+  <wsdl:message name="TicketAccountBIMsgResponse">
     <wsdl:part name="parameters" element="tns:TicketAccountBIResponse"></wsdl:part>
   </wsdl:message>
   <wsdl:portType name="TicketAccountServicePortType">
     <wsdl:operation name="TicketAccountBI">
-      <wsdl:input message="tns:TicketAccountBI"></wsdl:input>
-      <wsdl:output message="tns:TicketAccountBIResponse" />
+      <wsdl:input message="tns:TicketAccountBIMsg"/>
+      <wsdl:output message="tns:TicketAccountBIMsgResponse" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="TicketAccountServiceSOAP11Binding" type="tns:TicketAccountServicePortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="TicketAccountBI">
-      <soap:operation style="document" soapAction="" />
+      <soap:operation style="document" soapAction="http://bls.ch/tap/contract/TicketAccount/v1/TicketAccountBI" />
       <wsdl:input>
-        <soap:body use="literal"></soap:body>
+        <soap:body use="literal"/>
       </wsdl:input>
       <wsdl:output>
         <soap:body use="literal"></soap:body>
-      </wsdl:output>
-    </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="TicketAccountServiceSOAP12Binding" type="tns:TicketAccountServicePortType">
-    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="TicketAccountBI">
-      <soap12:operation style="document" soapAction=""></soap12:operation>
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
@@ -60,9 +49,6 @@
     <wsdl:port name="TicketAccountServiceSOAP11port_http" binding="tns:TicketAccountServiceSOAP11Binding">
       <soap:operation soapAction="http://bls.ch/tap/contract/TicketAccount/TicketAccountBI" />
       <soap:address location="http://127.0.0.1:8280/services/TicketAccountService" />
-    </wsdl:port>
-    <wsdl:port name="TicketAccountServiceSOAP12port_http" binding="tns:TicketAccountServiceSOAP12Binding">
-      <soap12:address location="http://127.0.0.1:8280/services/TicketAccountService" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
