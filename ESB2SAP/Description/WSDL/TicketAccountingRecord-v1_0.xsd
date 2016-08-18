@@ -32,7 +32,7 @@
   <xsd:complexType name="PaymentType">
     <xsd:sequence minOccurs="1" maxOccurs="10">
       <xsd:element name="DateTime" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="PaymentMedhod" type="xsd:string" minOccurs="1" maxOccurs="1" default="VBM" />
+      <xsd:element name="PaymentMethod" type="xsd:string" minOccurs="1" maxOccurs="1" default="VBM" />
       <xsd:element name="Ticket" type="tns:TicketType" minOccurs="1" maxOccurs="1" />
       <xsd:element name="Reservation" type="tns:ReservationType" minOccurs="1" maxOccurs="1" />
     </xsd:sequence>
@@ -41,7 +41,7 @@
   <xsd:complexType name="ReservationType">
     <xsd:sequence minOccurs="1" maxOccurs="10">
       <xsd:element name="AmountInCents" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="Curency" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="Currency" type="xsd:string" minOccurs="1" maxOccurs="1" />
       <xsd:element name="VatPercentInCents" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1" />
       <xsd:element name="Ticket" type="tns:TicketType" minOccurs="1" maxOccurs="1" />
     </xsd:sequence>
