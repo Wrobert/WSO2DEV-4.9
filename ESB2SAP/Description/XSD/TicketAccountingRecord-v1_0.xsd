@@ -71,8 +71,8 @@
     <xsd:sequence>
       <xsd:element name="Class" type="tns:ClassTypeEnum" minOccurs="1" maxOccurs="1" default="2" />
       <xsd:element name="Travellertype" type="tns:TravellerTypeEnum" minOccurs="1" maxOccurs="1" default="PERSON" />
-      <xsd:element name="ValidFrom" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="ValidTo" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="TicketValidFrom" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="TicketValidToDate" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
       <xsd:element name="Trip" type="tns:TripTypeEnum" minOccurs="1" maxOccurs="1" default="EINFACH" />
       <xsd:element name="UsageDurationTag" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1" default="1" />
     </xsd:sequence>

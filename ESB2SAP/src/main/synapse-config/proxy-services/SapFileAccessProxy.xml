@@ -17,6 +17,7 @@
         <property name="STATUS" value="after-smooks"/>
       </log>
       <log level="full"/>
+      <send/>
     </inSequence>
     <outSequence>
       <log description="STATUS" level="full" separator=","/>
