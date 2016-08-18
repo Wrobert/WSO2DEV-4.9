@@ -2,15 +2,15 @@
 <wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-  targetNamespace="http://bls.ch/tap/contract/TicketAccounting/v1"
-  xmlns:tns="http://bls.ch/tap/contract/TicketAccounting/v1"
-  xmlns:ctx="http://bls.ch/tap/schema/TicketAccountingRecord/v1">
+  targetNamespace="http://bls.ch/ta/contract/TicketAccounting/v1"
+  xmlns:tns="http://bls.ch/ta/contract/TicketAccounting/v1"
+  xmlns:ctx="http://bls.ch/ta/schema/TicketAccountingRecord/v1">
   
   <wsdl:documentation>TicketAccountingService</wsdl:documentation>
   <wsdl:types>
     <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
-      targetNamespace="http://bls.ch/tap/contract/TicketAccounting/v1">
-      <xsd:import namespace="http://bls.ch/tap/schema/TicketAccountingRecord/v1"
+      targetNamespace="http://bls.ch/ta/contract/TicketAccounting/v1">
+      <xsd:import namespace="http://bls.ch/ta/schema/TicketAccountingRecord/v1"
                   schemaLocation="TicketAccountingRecord-v1_0.xsd" />
       
       <xsd:element name="TicketAccountingMsg" type="tns:TicketAccountingType" />
@@ -23,7 +23,7 @@
       </xsd:complexType>
       <xsd:complexType name="TicketAccountingResponseType">
         <xsd:sequence>
-          <xsd:element name="TicketAccounting" type="ctx:TicketAccountingRecordResponseType"/>
+          <xsd:element name="TicketAccountingResponse" type="ctx:TicketAccountingRecordResponseType"/>
         </xsd:sequence>
       </xsd:complexType>
     </xsd:schema>
