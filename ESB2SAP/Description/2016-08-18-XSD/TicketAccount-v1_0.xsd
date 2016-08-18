@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsd:schema targetNamespace="http://bls.ch/tap/schema/TicketAccountingRecord/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-  xmlns:tns="http://bls.ch/tap/schema/TicketAccountingRecord/v1" elementFormDefault="qualified" version="1.0">
-  <xsd:element name="TicketAccountingRecord" type="tns:TicketAccountingRecordType" />
-  <xsd:complexType name="TicketAccountingRecordType">
+<xsd:schema targetNamespace="http://bls.ch/schema/TicketAccount/v1" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:tns="http://bls.ch/schema/TicketAccount/v1" elementFormDefault="qualified" version="1.0">
+  <xsd:element name="TicketAccount" type="tns:TicketAccountType" />
+  <xsd:complexType name="TicketAccountType">
     <xsd:sequence minOccurs="1" maxOccurs="1">
       <xsd:element name="Person" type="tns:PersonType" minOccurs="1" maxOccurs="10" />
       <xsd:element name="Reservation" type="tns:ReservationType" minOccurs="1" maxOccurs="10" />
@@ -10,19 +10,12 @@
       <xsd:element name="Ticket" type="tns:TicketType" minOccurs="1" maxOccurs="10" />
     </xsd:sequence>
   </xsd:complexType>
-  <xsd:element name="TicketAccountingRecordResponse" type="tns:TicketAccountingRecordResponseType" />
-  <xsd:complexType name="TicketAccountingRecordResponseType">
-    <xsd:sequence minOccurs="1" maxOccurs="1">
-      <xsd:element name="ReturnCode" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="ReturnMessage" type="xsd:string" minOccurs="0" maxOccurs="1" />
-    </xsd:sequence>
-  </xsd:complexType>
   <xsd:element name="Person" type="tns:PersonType" />
   <xsd:complexType name="PersonType">
     <xsd:sequence minOccurs="1" maxOccurs="20">
       <xsd:element name="Birthdate" type="xsd:date" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="Firstname" type="xsd:string" form="qualified" minOccurs="1" maxOccurs="1" default="Max" />
-      <xsd:element name="Lastname" type="xsd:string" minOccurs="1" maxOccurs="1" default="Muster" />
+      <xsd:element name="Firstname" type="xsd:string" form="qualified" minOccurs="1" maxOccurs="1" default="Robert" />
+      <xsd:element name="Lastname" type="xsd:string" minOccurs="1" maxOccurs="1" default="Wydler" />
       <xsd:element name="Payment" type="tns:PaymentType" minOccurs="1" maxOccurs="1" />
       <xsd:element name="Ticket" type="tns:TicketType" minOccurs="1" maxOccurs="1" />
       <xsd:element name="Reservation" type="tns:ReservationType" minOccurs="1" maxOccurs="10" />
@@ -58,21 +51,12 @@
       <xsd:enumeration value="RETOUR" />
     </xsd:restriction>
   </xsd:simpleType>
-  <xsd:simpleType name="TravellerTypeEnum">
-    <xsd:restriction base="xsd:string">
-      <xsd:enumeration value="PERSON" />
-      <xsd:enumeration value="FAHRRAD" />
-      <xsd:enumeration value="HUND" />
-      <xsd:enumeration value="KIND" />
-    </xsd:restriction>
-  </xsd:simpleType>
   <xsd:element name="Ticket" type="tns:TicketType" />
   <xsd:complexType name="TicketType">
     <xsd:sequence>
       <xsd:element name="Class" type="tns:ClassTypeEnum" minOccurs="1" maxOccurs="1" default="2" />
-      <xsd:element name="Travellertype" type="tns:TravellerTypeEnum" minOccurs="1" maxOccurs="1" default="PERSON" />
-      <xsd:element name="ValidFrom" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
-      <xsd:element name="ValidTo" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="TicketValidFrom" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="TicketValidToDate" type="xsd:dateTime" minOccurs="1" maxOccurs="1" />
       <xsd:element name="Trip" type="tns:TripTypeEnum" minOccurs="1" maxOccurs="1" default="EINFACH" />
       <xsd:element name="UsageDurationTag" type="xsd:unsignedInt" minOccurs="1" maxOccurs="1" default="1" />
     </xsd:sequence>
