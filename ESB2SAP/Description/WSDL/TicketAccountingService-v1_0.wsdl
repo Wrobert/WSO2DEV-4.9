@@ -17,7 +17,7 @@
       <xsd:element name="TicketAccountingMsgResponse" type="tns:TicketAccountingResponseType" />
       
       <xsd:complexType name="TicketAccountingType">
-        <xsd:sequence>
+        <xsd:sequence minOccurs="1" maxOccurs="20">
           <xsd:element name="TicketAccounting" type="ctx:TicketAccountingRecordType"/>
         </xsd:sequence>
       </xsd:complexType>
